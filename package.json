@@ -1,0 +1,10 @@
+{
+  "name": "shopping-list",
+  "version": "1.0.0",
+  "description": "A Simple shopping list, made as a learning project with VueJS and NestJS in Typescript.",
+  "scripts": {
+    "start": "docker-compose build && docker-compose up"
+  },
+  "author": "Jonas Leitner",
+  "license": "ISC"
+}

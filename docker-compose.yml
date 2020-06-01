@@ -1,0 +1,27 @@
+version: "3"
+services:
+  client:
+    build: ./client/
+    command: npm run serve
+    depends_on:
+      - server
+    ports:
+    - 8080:8080
+  server:
+    build: ./api/
+    command: npm run start:debug
+    depends_on:
+      - mongodb
+    ports:
+      - 3030:3030
+      - 9999:9999
+    volumes:
+      - ./api/src:/app/src
+  mongodb:
+    image: mongo:4.2.7-bionic
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+volumes:
+  mongodb:

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="93a7e6ff-b2db-4ac2-a333-3257ba4d456e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZAbw8M2rxL5QarIrYL1Bew3ghH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.0" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\Jonas\Desktop\Projekte\shopping-list\client\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\api\src" />
+      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\api" />
+      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\src\items" />
+      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\src\items\dto" />
+      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\src\schemas" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93a7e6ff-b2db-4ac2-a333-3257ba4d456e" name="Default Changelist" comment="" />
+      <created>1584285081523</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584285081523</updated>
+      <workItem from="1584285085719" duration="1029000" />
+      <workItem from="1584453837690" duration="60000" />
+      <workItem from="1584468634557" duration="3029000" />
+      <workItem from="1584532220986" duration="223000" />
+      <workItem from="1584985529630" duration="2395000" />
+      <workItem from="1584991551053" duration="1724000" />
+      <workItem from="1590606824572" duration="2294000" />
+      <workItem from="1590609274650" duration="1369000" />
+      <workItem from="1590780450134" duration="175000" />
+      <workItem from="1590780869181" duration="400000" />
+      <workItem from="1590781303388" duration="665000" />
+      <workItem from="1590949805321" duration="65000" />
+      <workItem from="1590951846280" duration="6195000" />
+      <workItem from="1590970154757" duration="3208000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590609593948">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590609593948" />
+    <state x="1061" y="442" key="FileChooserDialogImpl" timestamp="1584453893253">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1061" y="442" key="FileChooserDialogImpl/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1584453893253" />
+    <state width="2517" height="400" key="GridCell.Tab.0.bottom" timestamp="1590958276614">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590958276614" />
+    <state width="2517" height="400" key="GridCell.Tab.0.center" timestamp="1590958276614">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="400" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590958276614" />
+    <state width="2517" height="400" key="GridCell.Tab.0.left" timestamp="1590958276614">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="400" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590958276614" />
+    <state width="2517" height="400" key="GridCell.Tab.0.right" timestamp="1590958276614">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="400" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590958276614" />
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1584991550249">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1584991550249" />
+    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590956226619">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590956226619" />
+    <state x="731" y="425" key="new project wizard" timestamp="1584453895217">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="731" y="425" key="new project wizard/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1584453895217" />
+  </component>
+</project>
