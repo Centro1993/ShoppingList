@@ -4,10 +4,12 @@ services:
     build: ./client/
     command: npm run serve
     depends_on:
-      - server
+      - api
     ports:
     - 8080:8080
-  server:
+    volumes:
+      - ./client/src:/app/src
+  api:
     build: ./api/
     command: npm run start:debug
     depends_on:

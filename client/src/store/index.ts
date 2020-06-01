@@ -13,7 +13,7 @@ interface HttpBinData {
   url: string;
   data: any;
   json: any;
-  args?: any
+  args?: any;
 }
 
 export default new Vuex.Store({
@@ -22,10 +22,10 @@ export default new Vuex.Store({
   },
   mutations: {
     async addItem(state, createItem: CreateItemDto) {
-      let restRes: rm.IRestResponse<HttpBinData> = await rest.create<HttpBinData>("/item", createItem)
+      const restRes: rm.IRestResponse<HttpBinData> = await rest.create<HttpBinData>("/item", createItem)
     },
     async fetchItems(state) {
-      let res: rm.IRestResponse<Item[]>= await rest.get<Item[]>('/item')
+      const res: rm.IRestResponse<Item[]>= await rest.get<Item[]>('/item')
       state.items = res.result || []
     }
   },

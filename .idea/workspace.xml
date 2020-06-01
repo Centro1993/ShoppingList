@@ -1,7 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93a7e6ff-b2db-4ac2-a333-3257ba4d456e" name="Default Changelist" comment="" />
+    <list default="true" id="b9228797-b2aa-4300-979b-ecf123918dbb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/dto/create-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/dto/create-item.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/items/items.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/items/items.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/items/items.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/items/items.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/items/items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/items/items.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/schemas/item.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/schemas/item.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.browserslistrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/android-chrome-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/android-chrome-192x192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/android-chrome-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/android-chrome-512x512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/android-chrome-maskable-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/android-chrome-maskable-192x192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/android-chrome-maskable-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/android-chrome-maskable-512x512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-152x152.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-152x152.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-180x180.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-180x180.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-60x60.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-60x60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-76x76.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon-76x76.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/apple-touch-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/favicon-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/msapplication-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/msapplication-icon-144x144.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/mstile-150x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/mstile-150x150.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/img/icons/safari-pinned-tab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/img/icons/safari-pinned-tab.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/HelloWorld.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Item/CreateItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item/CreateItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/registerServiceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/registerServiceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shims-tsx.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shims-tsx.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shims-vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shims-vue.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/About.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-list.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-list.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,101 +68,76 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1ZAbw8M2rxL5QarIrYL1Bew3ghH" />
+  <component name="ProjectId" id="1cjFZVBDJvCGUqv9E843rAqN5qO" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.15.0" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\Jonas\Desktop\Projekte\shopping-list\client\node_modules\typescript\lib" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\api\src" />
-      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\api" />
-      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\src\items" />
-      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\src\items\dto" />
-      <recent name="C:\Users\Jonas\Desktop\Projekte\shopping-list\src\schemas" />
-    </key>
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/client/node_modules/eslint" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\client\node_modules\typescript\lib" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="93a7e6ff-b2db-4ac2-a333-3257ba4d456e" name="Default Changelist" comment="" />
-      <created>1584285081523</created>
+      <changelist id="b9228797-b2aa-4300-979b-ecf123918dbb" name="Default Changelist" comment="" />
+      <created>1591034150223</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1584285081523</updated>
-      <workItem from="1584285085719" duration="1029000" />
-      <workItem from="1584453837690" duration="60000" />
-      <workItem from="1584468634557" duration="3029000" />
-      <workItem from="1584532220986" duration="223000" />
-      <workItem from="1584985529630" duration="2395000" />
-      <workItem from="1584991551053" duration="1724000" />
-      <workItem from="1590606824572" duration="2294000" />
-      <workItem from="1590609274650" duration="1369000" />
-      <workItem from="1590780450134" duration="175000" />
-      <workItem from="1590780869181" duration="400000" />
-      <workItem from="1590781303388" duration="665000" />
-      <workItem from="1590949805321" duration="65000" />
-      <workItem from="1590951846280" duration="6195000" />
-      <workItem from="1590970154757" duration="3208000" />
+      <updated>1591034150223</updated>
+      <workItem from="1591034162615" duration="3102000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/api/src/app.module.js" />
+        <option value="$PROJECT_DIR$/api/src/main.js" />
+        <option value="$PROJECT_DIR$/api/src/dto/create-item.dto.js" />
+        <option value="$PROJECT_DIR$/api/src/items/items.controller.js" />
+        <option value="$PROJECT_DIR$/api/src/items/items.module.js" />
+        <option value="$PROJECT_DIR$/api/src/items/items.service.js" />
+        <option value="$PROJECT_DIR$/api/src/schemas/item.schema.js" />
+      </list>
+    </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590609593948">
+    <state x="948" y="438" key="#ESLint" timestamp="1591035024477">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590609593948" />
-    <state x="1061" y="442" key="FileChooserDialogImpl" timestamp="1584453893253">
+    <state x="948" y="438" key="#ESLint/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591035024477" />
+    <state x="1030" y="503" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591038500215">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1061" y="442" key="FileChooserDialogImpl/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1584453893253" />
-    <state width="2517" height="400" key="GridCell.Tab.0.bottom" timestamp="1590958276614">
+    <state x="1030" y="503" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591038500215" />
+    <state x="782" y="346" key="SettingsEditor" timestamp="1591035002326">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590958276614" />
-    <state width="2517" height="400" key="GridCell.Tab.0.center" timestamp="1590958276614">
+    <state x="782" y="346" key="SettingsEditor/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591035002326" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1591034956921">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="400" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590958276614" />
-    <state width="2517" height="400" key="GridCell.Tab.0.left" timestamp="1590958276614">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="400" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590958276614" />
-    <state width="2517" height="400" key="GridCell.Tab.0.right" timestamp="1590958276614">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="400" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590958276614" />
-    <state x="977" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1584991550249">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="977" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1584991550249" />
-    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590956226619">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1590956226619" />
-    <state x="731" y="425" key="new project wizard" timestamp="1584453895217">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="731" y="425" key="new project wizard/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1584453895217" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591034956921" />
   </component>
 </project>
