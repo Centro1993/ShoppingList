@@ -2,29 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9228797-b2aa-4300-979b-ecf123918dbb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api.Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/dto/create-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/dto/create-item.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/items/items.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/items/items.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/items/items.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/items/items.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/items/items.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/items/items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/schemas/item.schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/schemas/item.schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/schemas/item.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/schemas/item.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/modules/items/schemas/item.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/schemas/item.schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.browserslistrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.dockerignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Dockerfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/babel.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
@@ -62,7 +52,6 @@
       <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-list.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-list.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +120,7 @@
       <workItem from="1591034162615" duration="7581000" />
       <workItem from="1591045687821" duration="9709000" />
       <workItem from="1591055889439" duration="1543000" />
-      <workItem from="1591093106260" duration="2608000" />
+      <workItem from="1591093106260" duration="3406000" />
     </task>
     <servers />
   </component>
