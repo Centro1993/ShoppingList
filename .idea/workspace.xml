@@ -12,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/schemas/item.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/schemas/item.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/client.Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.browserslistrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
@@ -120,7 +121,8 @@
       <workItem from="1591034162615" duration="7581000" />
       <workItem from="1591045687821" duration="9709000" />
       <workItem from="1591055889439" duration="1543000" />
-      <workItem from="1591093106260" duration="3406000" />
+      <workItem from="1591093106260" duration="4072000" />
+      <workItem from="1591099145416" duration="1450000" />
     </task>
     <servers />
   </component>
@@ -143,26 +145,42 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1166" y="564" key="#Notifications/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591056178057" />
-    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591041091157">
+    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591097087417">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591041091157" />
-    <state x="1030" y="503" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591047366588">
+    <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591097087417" />
+    <state x="1030" y="503" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591099991367">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1030" y="503" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591047366588" />
+    <state x="1030" y="503" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591099991367" />
     <state x="1086" y="417" key="#com.intellij.ide.util.MemberChooser" timestamp="1591043163690">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1086" y="417" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591043163690" />
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1591097213223">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591097213223" />
+    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1591097213222">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591097213222" />
+    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1591097213222">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591097213222" />
+    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1591097213223">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591097213223" />
     <state x="782" y="346" key="SettingsEditor" timestamp="1591056096722">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="782" y="346" key="SettingsEditor/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591056096722" />
-    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591043123276">
+    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591100136493">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591043123276" />
+    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591100136493" />
     <state x="731" y="384" key="new project wizard" timestamp="1591048030172">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -179,6 +197,11 @@
           <url>file://$PROJECT_DIR$/api/src/modules/items/items.service.ts</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/src/modules/items/items.controller.ts</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

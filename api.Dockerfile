@@ -7,7 +7,6 @@ COPY /api/tsconfig*.json ./
 COPY /api .
 
 RUN npm ci
-RUN npm run build
 
 EXPOSE 3000
 CMD ["npm", "start"]

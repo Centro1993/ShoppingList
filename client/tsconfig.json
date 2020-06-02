@@ -34,7 +34,6 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules",
-    "../api-dist"
+    "node_modules"
   ]
 }

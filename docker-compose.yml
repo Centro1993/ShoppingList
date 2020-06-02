@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: client.Dockerfile
-    command: npm run serve
+    command: ["./wait-for", "api:3000", "--", "npm", "run", "serve"]
     depends_on:
       - api
     ports:

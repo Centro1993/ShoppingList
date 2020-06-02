@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import * as rm from 'typed-rest-client/RestClient'
-import {GetItemDto} from "../../../api-dist/dist/dto/get-item.dto";
 import {CreateItemDto} from "../../../api-dist/dist/dto/create-item.dto";
+import {GetItemDto} from "../../../api-dist/dist/dto/get-item.dto";
 
 const rest: rm.RestClient = new rm.RestClient('http://api:3030')
 
