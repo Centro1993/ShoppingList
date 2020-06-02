@@ -4,7 +4,7 @@ import * as rm from 'typed-rest-client/RestClient'
 import {CreateItemDto} from "../../../api-dist/dist/dto/create-item.dto";
 import {GetItemDto} from "../../../api-dist/dist/dto/get-item.dto";
 
-const rest: rm.RestClient = new rm.RestClient('http://api:3030')
+const rest: rm.RestClient = new rm.RestClient('api', 'http://localhost:3000')
 
 Vue.use(Vuex);
 
