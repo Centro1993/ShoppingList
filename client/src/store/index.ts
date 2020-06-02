@@ -1,9 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import * as rm from 'typed-rest-client/RestClient'
-
-import {Item} from "../../../api/src/schemas/item.schema";
-import {CreateItemDto} from "../../../api/src/dto/create-item.dto";
+import {CreateItemDto} from "../../../api-dist/dist/dto/create-item.dto";
+import {GetItemDto} from "../../../api-dist/dist/dto/get-item.dto";
 
 const rest: rm.RestClient = new rm.RestClient('http://api:3030')
 
@@ -18,17 +17,18 @@ interface HttpBinData {
 
 export default new Vuex.Store({
   state: {
-    items: Array<Item>()
+    items: Array<GetItemDto>()
   },
   mutations: {
-    async addItem(state, createItem: CreateItemDto) {
-      const restRes: rm.IRestResponse<HttpBinData> = await rest.create<HttpBinData>("/item", createItem)
+    async setItems(state, createItem: CreateItemDto) {
+      const restRes: rm.IRestResponse<HttpBinData> = await rest.create<HttpBinData>('/item', createItem)
     },
-    async fetchItems(state) {
-      const res: rm.IRestResponse<Item[]>= await rest.get<Item[]>('/item')
-      state.items = res.result || []
+  },
+  actions: {
+    async fetchItems({commit}) {
+      const res: rm.IRestResponse<GetItemDto[]>= await rest.get<GetItemDto[]>('/item')
+      this.state.items = res.result || []
     }
   },
-  actions: {},
   modules: {}
 });

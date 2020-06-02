@@ -34,11 +34,7 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
-  ],
-  "references": [
-    {
-      "path": "../api/src/dto"
-    }
+    "node_modules",
+    "../api-dist"
   ]
 }

@@ -1,5 +1,11 @@
 export class CreateItemDto {
-    readonly name: string;
-    readonly amount: number;
-    readonly acquired: boolean;
+    name: string;
+    amount?: number;
+    unit?: string;
+
+    constructor(name: string, amount?: number, unit?: string) {
+        this.name = name;
+        this.amount = amount;
+        this.unit = unit;
+    }
 }

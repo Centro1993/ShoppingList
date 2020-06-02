@@ -1,29 +1,41 @@
 version: "3"
 services:
+
   client:
-    build: ./client/
+    build:
+      context: ./
+      dockerfile: client.Dockerfile
     command: npm run serve
     depends_on:
       - api
     ports:
     - 8080:8080
     volumes:
-      - ./client/src:/app/src
+      - ./client/src:/workdir/app/client/src
+      - ./api-dist:/workdir/app/api-dist
+
   api:
-    build: ./api/
+    build:
+      context: ./
+      dockerfile: api.Dockerfile
     command: npm run start:debug
     depends_on:
       - mongodb
     ports:
       - 3030:3030
-      - 9999:9999
+      - 9229:9229
     volumes:
-      - ./api/src:/app/src
+      - ./api/src:/app/api/src
+      - ./api-dist:/app/api-dist
+
   mongodb:
+    logging:
+      driver: none
     image: mongo:4.2.7-bionic
     ports:
       - 27017:27017
     volumes:
       - mongodb:/data/db
+
 volumes:
   mongodb:

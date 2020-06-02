@@ -1,16 +1,25 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-
+  <div>
+    <input v-model="newItem.name" placeholder="Name" />
+    <input v-model="newItem.amount" type="number" placeholder="Menge" />
+    <input v-model="newItem.unit" placeholder="Einheit" />
+    <div @click="createItem">
+      Eintrag erstellen
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import { CreateItemDto } from "../../../../api-dist/dist/dto/create-item.dto";
 
 @Component
 export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
+  private newItem: CreateItemDto = new CreateItemDto("");
+
+  async createItem() {
+    await this.$store.dispatch("fetchItems", this.newItem);
+  }
 }
 </script>
 

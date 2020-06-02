@@ -10,6 +10,9 @@ export class Item extends Document {
     amount: number;
 
     @Prop()
+    unit: string;
+
+    @Prop()
     acquired: boolean;
 }
 
