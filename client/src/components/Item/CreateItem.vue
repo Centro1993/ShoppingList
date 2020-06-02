@@ -18,7 +18,7 @@ export default class HelloWorld extends Vue {
   private newItem: CreateItemDto = new CreateItemDto("");
 
   async createItem() {
-    await this.$store.dispatch("fetchItems", this.newItem);
+    await this.$store.dispatch("createItem", this.newItem);
   }
 }
 </script>

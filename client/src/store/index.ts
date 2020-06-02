@@ -20,15 +20,19 @@ export default new Vuex.Store({
     items: Array<GetItemDto>()
   },
   mutations: {
-    async setItems(state, createItem: CreateItemDto) {
-      const restRes: rm.IRestResponse<HttpBinData> = await rest.create<HttpBinData>('/item', createItem)
+    async setItems(state, items: GetItemDto[]) {
+      state.items = items
     },
   },
   actions: {
     async fetchItems({commit}) {
       const res: rm.IRestResponse<GetItemDto[]>= await rest.get<GetItemDto[]>('/item')
       console.log(res)
-      this.state.items = res.result || []
+      commit('setItems', res.result);
+    },
+    async createItem({dispatch}, newItem: CreateItemDto) {
+      const res: rm.IRestResponse<CreateItemDto>= await rest.create<CreateItemDto>('/item', newItem)
+      await dispatch('fetchItems')
     }
   },
   modules: {}
