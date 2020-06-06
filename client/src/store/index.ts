@@ -27,7 +27,6 @@ export default new Vuex.Store({
   actions: {
     async fetchItems({commit}) {
       const res: rm.IRestResponse<GetItemDto[]>= await rest.get<GetItemDto[]>('/item')
-      console.log(res)
       commit('setItems', res.result);
     },
     async createItem({dispatch}, newItem: CreateItemDto) {

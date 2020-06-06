@@ -10,17 +10,25 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { CreateItemDto } from "../../../../api-dist/dist/dto/create-item.dto";
+  import {computed, defineComponent, ref} from '@vue/composition-api'
+  import { CreateItemDto } from "../../../../api-dist/dist/dto/create-item.dto";
 
-@Component
-export default class HelloWorld extends Vue {
-  private newItem: CreateItemDto = new CreateItemDto("");
+  export default defineComponent({
+    name: 'CreateItem',
+    setup(props:any, context: any) {
+      const { $store } = context.root
+      const newItem = ref<CreateItemDto>(new CreateItemDto('', 1));
 
-  async createItem() {
-    await this.$store.dispatch("createItem", this.newItem);
-  }
-}
+      async function createItem() {
+        await $store.dispatch("createItem", newItem.value);
+      }
+      return {
+        newItem,
+        createItem
+      }
+    }
+  })
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -2,36 +2,42 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <CreateItem />
-    {{this.items}}
+    <ul v-for="(item, index) in $store.state.items" :key="index">
+      <li>
+        <div>
+          <p>{{item.name}}</p>
+          <p>{{item.amount}}</p>
+          <p>{{item.unit}}</p>
+          <p>{{item._id}}</p>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // @ is an alias to /src
-import CreateItem from "@/components/Item/CreateItem";
-import {Watch} from "vue-property-decorator";
+import CreateItem from "@/components/Item/CreateItem.vue";
+import {computed, defineComponent, reactive, ref, watchEffect} from "@vue/composition-api";
 
-export default {
+export default defineComponent({
   name: "Home",
+  setup (props: any, context: any) {
+    const {$store, $router} = context.root;
+
+    async function fetchData () {
+      await $store.dispatch('fetchItems')
+    }
+
+    watchEffect(
+      async () => {
+        await fetchData()
+      }
+    )
+    return {}
+  },
   components: {
     CreateItem
-  },
-  computed: {
-    items () {
-      return this.$store.state.items
-    }
-  },
-  watch: {
-    '$route': {
-      immediate: true,
-      handler: 'fetchData'
-    }
-  },
-  methods: {
-    @Watch('$route', { immediate: true, deep: true })
-    async fetchData () {
-      await this.$store.dispatch('fetchItems')
-    }
   }
-};
+});
 </script>
