@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b9228797-b2aa-4300-979b-ecf123918dbb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/tslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/dto/create-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/dto/create-item.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/dto/get-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/dto/get-item.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/dto/create-item.dto.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/dto/create-item.dto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/dto/create-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/dto/create-item.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/dto/get-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/dto/get-item.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" afterDir="false" />
@@ -48,7 +48,6 @@
       <change beforePath="$PROJECT_DIR$/client/src/shims-tsx.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shims-tsx.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/shims-vue.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shims-vue.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/wait-for" beforeDir="false" afterPath="$PROJECT_DIR$/client/wait-for" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
@@ -104,12 +103,12 @@
     <property name="ts.external.directory.path" value="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\client\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\client\src\components\Item" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\api\src\modules\items" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\client\src\components\Item" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -157,7 +156,8 @@
       <workItem from="1591103370105" duration="2577000" />
       <workItem from="1591106658046" duration="3144000" />
       <workItem from="1591456369916" duration="7522000" />
-      <workItem from="1591479510735" duration="10109000" />
+      <workItem from="1591479510735" duration="10761000" />
+      <workItem from="1591532332781" duration="1632000" />
     </task>
     <servers />
   </component>
@@ -165,13 +165,12 @@
     <option name="version" value="2" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/api/src/app.module.js" />
-        <option value="$PROJECT_DIR$/api/src/main.js" />
-        <option value="$PROJECT_DIR$/api/src/dto/create-item.dto.js" />
-        <option value="$PROJECT_DIR$/api/src/modules/items/items.module.js" />
         <option value="$PROJECT_DIR$/api/src/modules/items/items.service.js" />
         <option value="$PROJECT_DIR$/api/src/modules/items/items.controller.js" />
+        <option value="$PROJECT_DIR$/api/src/main.js" />
+        <option value="$PROJECT_DIR$/api/src/app.module.js" />
         <option value="$PROJECT_DIR$/api/src/modules/items/schemas/item.schema.js" />
+        <option value="$PROJECT_DIR$/api/src/modules/items/items.module.js" />
       </list>
     </option>
   </component>
@@ -189,9 +188,10 @@
     </state>
     <state x="919" y="478" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591480051027" />
     <state x="9058" y="737" key="#com.intellij.execution.impl.EditConfigurationsDialog/3840.0.3840.2160/0.27.3840.2072/7680.0.3840.2160@7680.0.3840.2160" timestamp="1591103600515" />
-    <state x="9302" y="881" width="586" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591103502598">
-      <screen x="7680" y="0" width="3840" height="2160" />
+    <state x="1081" y="571" width="499" height="257" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591533178279">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="1081" y="571" width="499" height="257" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591533178279" />
     <state x="9302" y="881" width="586" height="396" key="#com.intellij.fileTypes.FileTypeChooser/3840.0.3840.2160/0.27.3840.2072/7680.0.3840.2160@7680.0.3840.2160" timestamp="1591103502598" />
     <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591452847142">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -262,10 +262,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591485394915" />
-    <state x="1055" y="329" width="672" height="440" key="search.everywhere.popup" timestamp="1591488039552">
+    <state x="1055" y="329" width="672" height="440" key="search.everywhere.popup" timestamp="1591533914588">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1055" y="329" width="672" height="440" key="search.everywhere.popup/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591488039552" />
+    <state x="1055" y="329" width="672" height="440" key="search.everywhere.popup/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1591533914588" />
     <state x="9263" y="507" width="672" height="678" key="search.everywhere.popup/3840.0.3840.2160/0.27.3840.2072/7680.0.3840.2160@7680.0.3840.2160" timestamp="1591104541278" />
   </component>
 </project>

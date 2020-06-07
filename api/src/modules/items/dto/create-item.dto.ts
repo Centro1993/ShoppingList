@@ -1,4 +1,4 @@
-import {IsNotEmpty, IsPositive} from "class-validator";
+import {IsBoolean, IsIn, IsNotEmpty, IsPositive} from "class-validator";
 
 export class CreateItemDto {
     @IsNotEmpty()
@@ -7,7 +7,11 @@ export class CreateItemDto {
     @IsPositive()
     amount?: number;
 
+    @IsIn(['Kilo'])
     unit?: string;
+
+    @IsBoolean()
+    acquired?: boolean;
 
     constructor(name: string, amount?: number, unit?: string) {
         this.name = name;

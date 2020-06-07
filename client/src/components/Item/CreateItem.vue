@@ -36,7 +36,7 @@
 
 <script lang="ts">
     import {defineComponent, ref} from "@vue/composition-api";
-    import {CreateItemDto} from "../../../../api-dist/dist/dto/create-item.dto";
+    import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-item.dto";
 
     export default defineComponent({
         name: "CreateItem",

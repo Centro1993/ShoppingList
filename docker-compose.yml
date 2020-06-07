@@ -19,6 +19,8 @@ services:
       context: ./
       dockerfile: api.Dockerfile
     command: npm run start:debug
+    environment:
+      MONGODB_URI: 'mongodb://mongodb:27017/shoppingList'
     depends_on:
       - mongodb
     ports:

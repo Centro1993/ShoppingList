@@ -1,19 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import * as rm from 'typed-rest-client/RestClient'
-import {GetItemDto} from "../../../api-dist/dist/dto/get-item.dto";
-import {CreateItemDto} from "../../../api-dist/dist/dto/create-item.dto";
+import {GetItemDto} from "../../../api-dist/dist/modules/items/dto/get-item.dto";
+import {CreateItemDto} from "../../../api-dist/dist/modules/items/dto/create-item.dto";
 
 const rest: rm.RestClient = new rm.RestClient('api', 'http://localhost:3000')
 
 Vue.use(Vuex);
-
-interface HttpBinData {
-  url: string;
-  data: any;
-  json: any;
-  args?: any;
-}
 
 export default new Vuex.Store({
   state: {
