@@ -16,4 +16,12 @@ export class ItemsService {
     async findAll(): Promise<Item[]> {
         return this.itemModel.find().exec();
     }
+
+    async deleteOne(id: string): Promise<Item> {
+        return this.itemModel.deleteOne({_id: id}).exec();
+    }
+
+    async deleteAll(): Promise<Item> {
+        return this.itemModel.deleteMany({}).exec();
+    }
 }

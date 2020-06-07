@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import * as rm from 'typed-rest-client/RestClient'
-import {CreateItemDto} from "../../../api-dist/dist/dto/create-item.dto";
 import {GetItemDto} from "../../../api-dist/dist/dto/get-item.dto";
+import {CreateItemDto} from "../../../api-dist/dist/dto/create-item.dto";
 
 const rest: rm.RestClient = new rm.RestClient('api', 'http://localhost:3000')
 
@@ -31,6 +31,14 @@ export default new Vuex.Store({
     },
     async createItem({dispatch}, newItem: CreateItemDto) {
       const res: rm.IRestResponse<CreateItemDto>= await rest.create<CreateItemDto>('/item', newItem)
+      await dispatch('fetchItems')
+    },
+    async removeItem({dispatch}, id: string) {
+      const res: rm.IRestResponse<CreateItemDto>= await rest.del<GetItemDto>(`/item/${id}`)
+      await dispatch('fetchItems')
+    },
+    async removeAllItems({dispatch}) {
+      const res: rm.IRestResponse<CreateItemDto>= await rest.del<GetItemDto>(`/item`)
       await dispatch('fetchItems')
     }
   },

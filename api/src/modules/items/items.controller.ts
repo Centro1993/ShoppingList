@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post, Query} from '@nestjs/common';
 import { ItemsService } from './items.service';
 import { CreateItemDto } from '../../dto/create-item.dto';
 import { Item } from './schemas/item.schema';
@@ -15,5 +15,15 @@ export class ItemsController {
     @Get()
     async findAll(): Promise<Item[]> {
         return this.itemsService.findAll();
+    }
+
+    @Delete()
+    async deleteAll(): Promise<Item> {
+        return this.itemsService.deleteAll();
+    }
+
+    @Delete(':id')
+    async deleteOne(@Param() params): Promise<Item> {
+        return this.itemsService.deleteOne(params.id);
     }
 }
