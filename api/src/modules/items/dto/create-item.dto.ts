@@ -1,4 +1,5 @@
-import {IsBoolean, IsIn, IsNotEmpty, IsPositive} from "class-validator";
+import {IsIn, IsNotEmpty, IsOptional, IsPositive} from "class-validator";
+import units from "../../../lib/enums/units"
 
 export class CreateItemDto {
     @IsNotEmpty()
@@ -7,11 +8,9 @@ export class CreateItemDto {
     @IsPositive()
     amount?: number;
 
-    @IsIn(['Kilo'])
+    @IsOptional()
+    @IsIn(units)
     unit?: string;
-
-    @IsBoolean()
-    acquired?: boolean;
 
     constructor(name: string, amount?: number, unit?: string) {
         this.name = name;

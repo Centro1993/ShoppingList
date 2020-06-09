@@ -15,7 +15,7 @@
                     <label for="amount">Menge</label>
                 </b-col>
                 <b-col sm="3">
-                    <b-form-input v-model="newItem.amount" id="amount" type="number" placeholder="Menge"/>
+                    <b-form-input :value="newItem.amount" v-on:input="newItem.amount = parseFloat($event)" id="amount" type="number" placeholder="Menge"/>
                 </b-col>
             </b-row>
             <br>
@@ -24,7 +24,7 @@
                     <label for="unit">Einheit</label>
                 </b-col>
                 <b-col sm="3">
-                    <b-form-input v-model="newItem.unit" id="unit" placeholder="Einheit" min="0"/>
+                    <b-form-select v-model="newItem.unit" id="unit" :options="units"></b-form-select>
                 </b-col>
             </b-row>
             <div @click="createItem">
@@ -37,6 +37,7 @@
 <script lang="ts">
     import {defineComponent, ref} from "@vue/composition-api";
     import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-item.dto";
+    import units from "../../../../api-dist/dist/lib/enums/units"
 
     export default defineComponent({
         name: "CreateItem",
@@ -58,7 +59,8 @@
 
             return {
                 newItem,
-                createItem
+                createItem,
+                units
             };
         }
     });

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <h3>
+        Shopping List
+      </h3>
     </div>
     <router-view />
   </div>
@@ -10,7 +12,7 @@
 <script lang="ts">
   import { defineComponent } from '@vue/composition-api'
   export default defineComponent({
-
+    name: 'App'
   })
 </script>
 

@@ -1,1 +1,1 @@
-export default ['Kilo', 'Gramm', 'Stück', 'Milliliter', 'Liter']
+export default ['Kilo', 'Gramm', 'Stück', 'Milliliter', 'Liter', '']

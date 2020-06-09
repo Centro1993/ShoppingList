@@ -35,6 +35,9 @@ export default defineComponent({
       },
       {
         key: 'unit'
+      },
+      {
+        key: 'acquired'
       }
     ]
 
