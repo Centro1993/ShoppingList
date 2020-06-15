@@ -17,6 +17,10 @@ export class ItemsService {
         return this.itemModel.find().exec();
     }
 
+    async patchOne(editedItem): Promise<void> {
+        return this.itemModel.updateOne({ _id: editedItem._id }, editedItem).exec()
+    }
+
     async deleteOne(id: string): Promise<Item> {
         return this.itemModel.deleteOne({_id: id}).exec();
     }

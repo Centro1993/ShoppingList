@@ -1,7 +1,8 @@
-import {Body, Controller, Delete, Get, Param, Post, Query} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { ItemsService } from './items.service';
 import { CreateItemDto } from './dto/create-item.dto';
 import { Item } from './schemas/item.schema';
+import {GetItemDto} from "./dto/get-item.dto";
 
 @Controller('item')
 export class ItemsController {
@@ -10,6 +11,11 @@ export class ItemsController {
     @Post()
     async create(@Body() createItemDto: CreateItemDto) {
         await this.itemsService.create(createItemDto);
+    }
+
+    @Patch()
+    async patchOne(@Body() editedItem: GetItemDto): Promise<void> {
+        return this.itemsService.patchOne(editedItem)
     }
 
     @Get()
