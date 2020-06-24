@@ -14,7 +14,7 @@ export class ItemsService {
     }
 
     async findAll(): Promise<Item[]> {
-        return this.itemModel.find().exec();
+        return this.itemModel.find().populate('itemSuggestion').exec();
     }
 
     async patchOne(editedItem): Promise<void> {

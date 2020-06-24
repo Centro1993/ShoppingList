@@ -1,5 +1,7 @@
+import {GetItemSuggestionDto} from "../../item-suggestions/dto/get-item-suggestion.dto";
+
 export class GetItemDto {
-    name: string;
+    itemSuggestion: GetItemSuggestionDto;
     amount: number;
     unit: string;
     acquired: boolean;

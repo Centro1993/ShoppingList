@@ -24,7 +24,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/dto/create-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/dto/create-item.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/modules/items/dto/get-item.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/dto/get-item.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" afterDir="false" />
@@ -94,7 +96,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.19.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/store/modules" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -106,8 +108,15 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="ts.external.directory.path" value="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\client\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\client\src\store\modules" />
+      <recent name="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\api\src\modules\item-suggestions\dto" />
+      <recent name="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\api\src\modules" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Debug" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229" restartOnDisconnect="true">
@@ -131,7 +140,11 @@
       <workItem from="1591725722045" duration="5273000" />
       <workItem from="1592005935970" duration="2963000" />
       <workItem from="1592250286851" duration="2464000" />
-      <workItem from="1592255654386" duration="3980000" />
+      <workItem from="1592255654386" duration="4044000" />
+      <workItem from="1592657365950" duration="10027000" />
+      <workItem from="1592863410783" duration="23000" />
+      <workItem from="1592914802817" duration="710000" />
+      <workItem from="1593012700702" duration="13460000" />
     </task>
     <servers />
   </component>
@@ -174,43 +187,50 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592257805775" />
+    <state x="-3045" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592658348282">
+      <screen x="-3840" y="0" width="2560" height="1413" />
+    </state>
+    <state x="-3045" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-3840.0.2560.1413/0.0.2560.1400@-3840.0.2560.1413" timestamp="1592658348282" />
     <state x="1225" y="269" key="FileChooserDialogImpl" timestamp="1592255680819">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1225" y="269" key="FileChooserDialogImpl/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592255680819" />
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1592258783796">
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1592260112951">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592258783796" />
-    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1592258783796">
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592260112951" />
+    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1592260112951">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592258783796" />
-    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1592258783796">
+    <state width="2517" height="492" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592260112951" />
+    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1592260112951">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592258783796" />
-    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1592258783796">
+    <state width="2517" height="492" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592260112951" />
+    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1592260112951">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="492" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592258783796" />
-    <state x="925" y="102" key="SettingsEditor" timestamp="1592255709705">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2517" height="492" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592260112951" />
+    <state x="-2915" y="103" key="SettingsEditor" timestamp="1592667797440">
+      <screen x="-3840" y="0" width="2560" height="1413" />
     </state>
+    <state x="-2915" y="103" key="SettingsEditor/-3840.0.2560.1413/0.0.2560.1400@-3840.0.2560.1413" timestamp="1592667797440" />
     <state x="555" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591728221322" />
     <state x="925" y="102" key="SettingsEditor/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592255709705" />
-    <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592251402390">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="-2750" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593014538681">
+      <screen x="-3840" y="0" width="2560" height="1413" />
     </state>
+    <state x="-2750" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3840.0.2560.1413/0.0.2560.1400@-3840.0.2560.1413" timestamp="1593014538681" />
     <state x="1090" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592251402390" />
     <state x="1437" y="246" width="965" height="908" key="find.popup" timestamp="1592252108104">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="862" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1591727658089" />
     <state x="1437" y="246" width="965" height="908" key="find.popup/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1592252108104" />
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591730824744">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-3123" y="249" width="1120" height="1163" key="search.everywhere.popup" timestamp="1593020536878">
+      <screen x="-3840" y="0" width="2560" height="1413" />
     </state>
+    <state x="-3123" y="249" width="1120" height="1163" key="search.everywhere.popup/-3840.0.2560.1413/0.0.2560.1400@-3840.0.2560.1413" timestamp="1593020536878" />
     <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591730824744" />
   </component>
 </project>

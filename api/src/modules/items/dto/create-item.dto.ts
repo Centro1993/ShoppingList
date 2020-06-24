@@ -1,9 +1,9 @@
-import {IsBoolean, IsIn, IsNotEmpty, IsOptional, IsPositive} from "class-validator";
+import {IsBoolean, IsIn, IsMongoId, IsOptional, IsPositive} from "class-validator";
 import units from "../../../lib/enums/units"
 
 export class CreateItemDto {
-    @IsNotEmpty()
-    name: string;
+    @IsMongoId()
+    itemSuggestionId: string;
 
     @IsPositive()
     amount?: number;
@@ -15,8 +15,8 @@ export class CreateItemDto {
     @IsBoolean()
     acquired: boolean;
 
-    constructor(name: string, amount?: number, unit?: string) {
-        this.name = name;
+    constructor(itemSuggestionId: string, amount?: number, unit?: string) {
+        this.itemSuggestionId = itemSuggestionId;
         this.amount = amount;
         this.unit = unit;
         this.acquired = false;

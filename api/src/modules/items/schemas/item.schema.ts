@@ -1,12 +1,12 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import {Prop, raw, Schema, SchemaFactory} from '@nestjs/mongoose';
+import { Document, Schema as MongooseSchema } from 'mongoose';
 
 @Schema({
     timestamps: true
 })
 export class Item extends Document {
-    @Prop()
-    name: string;
+    @Prop(raw({ type: MongooseSchema.Types.ObjectId, ref: 'ItemSuggestion' }))
+    itemSuggestion: string;
 
     @Prop()
     amount: number;

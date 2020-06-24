@@ -6,7 +6,16 @@
                     <label for="name">Name</label>
                 </b-col>
                 <b-col sm="3">
-                    <b-form-input v-model="newItem.name" id="name" placeholder="Name"/>
+                    <vue-bootstrap-typeahead
+                            id="name"
+                            :data="itemSuggestions"
+                            v-model="userInput"
+                            size="lg"
+                            :serializer="s => s.name"
+                            placeholder="Name"
+                            @hit="newItem.itemSuggestionId = $event"
+                    >
+                    </vue-bootstrap-typeahead>
                 </b-col>
             </b-row>
             <br>
@@ -35,20 +44,41 @@
 </template>
 
 <script lang="ts">
-    import {defineComponent, ref} from "@vue/composition-api";
+    import {defineComponent, ref, watch, computed} from "@vue/composition-api";
     import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-item.dto";
     import units from "../../../../api-dist/dist/lib/enums/units"
+    import {GetItemSuggestionDto} from "../../../../api-dist/dist/modules/item-suggestions/dto/get-item-suggestion.dto";
+    import { ItemModule } from "@/store/modules/ItemModule";
+    import { ItemSuggestionModule} from "@/store/modules/ItemSuggestionModule";
+    import {CreateItemSuggestionDto} from "../../../../api-dist/dist/modules/item-suggestions/dto/create-item-suggestion.dto";
 
     export default defineComponent({
         name: "CreateItem",
         setup(props: any, context: any) {
-            const {$store, $bvToast} = context.root;
+            const {$bvToast} = context.root;
 
-            const newItem = ref<CreateItemDto>(new CreateItemDto("", 1));
+            const newItem = ref<CreateItemDto>(new CreateItemDto('', 1));
+            const userInput = ref<string>('')
+            const itemSuggestions = computed<GetItemSuggestionDto[]>(() => ItemSuggestionModule.itemSuggestions)
 
             async function createItem() {
                 try {
-                    await $store.dispatch("createItem", newItem.value);
+                    // create item suggestion if needed
+                    if (newItem.value.itemSuggestionId === '') {
+                        const newItemSuggestion: GetItemSuggestionDto | null = await ItemSuggestionModule.createItemSuggestion(new CreateItemSuggestionDto(userInput.value))
+                        if(!newItemSuggestion) {
+                            $bvToast.toast('Item could not be created', {
+                                variant: 'danger',
+                            });
+                        }
+                        newItem.value.itemSuggestionId = newItemSuggestion._id
+                    }
+
+                    await ItemModule.createItem(newItem.value);
+
+                    // clear previous input
+                    userInput.value = ''
+                    newItem.value = new CreateItemDto('', 1)
                 } catch (e) {
                     $bvToast.toast(e.message, {
                         variant: 'danger',
@@ -57,9 +87,18 @@
                 }
             }
 
+            watch(
+                () => newItem.value.itemSuggestionId,
+                (userInput) => {
+                    ItemSuggestionModule.findItemSuggestions(userInput)
+                }
+            )
+
             return {
                 newItem,
+                itemSuggestions,
                 createItem,
+                userInput,
                 units
             };
         }
