@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ItemsModule } from './modules/items/items.module';
-import { ItemSuggestionsModule } from './modules/item-suggestions/item-suggestions.module';
+import { ItemPresetsModule } from './modules/item-presets/item-presets.module';
 import { ConfigModule } from '@nestjs/config';
 import configuration from 'src/config/configuration'
 
@@ -13,7 +13,7 @@ import configuration from 'src/config/configuration'
       load: [configuration]
     }),
     ItemsModule,
-    ItemSuggestionsModule
+    ItemPresetsModule
   ],
 })
 export class AppModule {}

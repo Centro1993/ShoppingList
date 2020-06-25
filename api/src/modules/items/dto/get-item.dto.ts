@@ -1,7 +1,7 @@
-import {GetItemSuggestionDto} from "../../item-suggestions/dto/get-item-suggestion.dto";
+import {GetItemPresetDto} from "../../item-presets/dto/get-item-preset.dto";
 
 export class GetItemDto {
-    itemSuggestion: GetItemSuggestionDto;
+    itemPreset: GetItemPresetDto;
     amount: number;
     unit: string;
     acquired: boolean;

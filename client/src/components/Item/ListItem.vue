@@ -38,7 +38,7 @@
 
             const fields = [
                 {
-                    key: 'itemSuggestion.name',
+                    key: 'itemPreset.name',
                     label: 'Name'
                 },
                 {

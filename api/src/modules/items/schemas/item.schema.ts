@@ -5,8 +5,8 @@ import { Document, Schema as MongooseSchema } from 'mongoose';
     timestamps: true
 })
 export class Item extends Document {
-    @Prop(raw({ type: MongooseSchema.Types.ObjectId, ref: 'ItemSuggestion' }))
-    itemSuggestion: string;
+    @Prop(raw({ type: MongooseSchema.Types.ObjectId, ref: 'ItemPreset' }))
+    itemPreset: MongooseSchema.Types.ObjectId;
 
     @Prop()
     amount: number;

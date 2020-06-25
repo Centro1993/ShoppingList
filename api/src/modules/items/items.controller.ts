@@ -10,26 +10,26 @@ export class ItemsController {
 
     @Post()
     async create(@Body() createItemDto: CreateItemDto) {
-        await this.itemsService.create(createItemDto);
+        return await this.itemsService.create(createItemDto);
     }
 
     @Patch()
     async patchOne(@Body() editedItem: GetItemDto): Promise<void> {
-        return this.itemsService.patchOne(editedItem)
+        return await this.itemsService.patchOne(editedItem)
     }
 
     @Get()
     async findAll(): Promise<Item[]> {
-        return this.itemsService.findAll();
+        return await this.itemsService.findAll();
     }
 
     @Delete()
-    async deleteAll(): Promise<Item> {
-        return this.itemsService.deleteAll();
+    async deleteAll(): Promise<{ ok?: number; n?: number } & { deletedCount?: number }> {
+        return await this.itemsService.deleteAll();
     }
 
     @Delete(':id')
-    async deleteOne(@Param() params): Promise<Item> {
-        return this.itemsService.deleteOne(params.id);
+    async deleteOne(@Param() params): Promise<{ ok?: number; n?: number } & { deletedCount?: number }> {
+        return await this.itemsService.deleteOne(params.id);
     }
 }

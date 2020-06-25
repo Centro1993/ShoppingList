@@ -4,9 +4,9 @@ import {Document} from 'mongoose';
 @Schema({
     timestamps: true
 })
-export class ItemSuggestion extends Document {
+export class ItemPreset extends Document {
     @Prop({ required: true, unique: true })
     name: string;
 }
 
-export const ItemSuggestionSchema = SchemaFactory.createForClass(ItemSuggestion);
+export const ItemPresetSchema = SchemaFactory.createForClass(ItemPreset);

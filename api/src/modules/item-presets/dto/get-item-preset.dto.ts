@@ -1,4 +1,4 @@
-export class GetItemSuggestionDto {
+export class GetItemPresetDto {
     name: string;
 
     _id: string;

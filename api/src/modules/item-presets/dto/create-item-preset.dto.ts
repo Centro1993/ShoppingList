@@ -1,6 +1,6 @@
 import {IsString} from "class-validator";
 
-export class CreateItemSuggestionDto {
+export class CreateItemPresetDto {
     @IsString()
     name: string;
 

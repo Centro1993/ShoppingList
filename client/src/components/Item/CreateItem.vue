@@ -8,12 +8,12 @@
                 <b-col sm="3">
                     <vue-bootstrap-typeahead
                             id="name"
-                            :data="itemSuggestions"
+                            :data="itemPresets"
                             v-model="userInput"
                             size="lg"
                             :serializer="s => s.name"
                             placeholder="Name"
-                            @hit="newItem.itemSuggestionId = $event"
+                            @hit="newItem.itemPreset = $event"
                     >
                     </vue-bootstrap-typeahead>
                 </b-col>
@@ -47,10 +47,10 @@
     import {defineComponent, ref, watch, computed} from "@vue/composition-api";
     import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-item.dto";
     import units from "../../../../api-dist/dist/lib/enums/units"
-    import {GetItemSuggestionDto} from "../../../../api-dist/dist/modules/item-suggestions/dto/get-item-suggestion.dto";
+    import {GetItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/get-item-preset.dto";
     import { ItemModule } from "@/store/modules/ItemModule";
-    import { ItemSuggestionModule} from "@/store/modules/ItemSuggestionModule";
-    import {CreateItemSuggestionDto} from "../../../../api-dist/dist/modules/item-suggestions/dto/create-item-suggestion.dto";
+    import { ItemPresetModule} from "@/store/modules/ItemPresetModule";
+    import {CreateItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/create-item-preset.dto";
 
     export default defineComponent({
         name: "CreateItem",
@@ -59,19 +59,21 @@
 
             const newItem = ref<CreateItemDto>(new CreateItemDto('', 1));
             const userInput = ref<string>('')
-            const itemSuggestions = computed<GetItemSuggestionDto[]>(() => ItemSuggestionModule.itemSuggestions)
+            const itemPresets = computed<GetItemPresetDto[]>(() => ItemPresetModule.itemPresets)
 
             async function createItem() {
                 try {
                     // create item suggestion if needed
-                    if (newItem.value.itemSuggestionId === '') {
-                        const newItemSuggestion: GetItemSuggestionDto | null = await ItemSuggestionModule.createItemSuggestion(new CreateItemSuggestionDto(userInput.value))
-                        if(!newItemSuggestion) {
+                    if (newItem.value.itemPreset === '') {
+                        const newItemPreset: GetItemPresetDto | null = await ItemPresetModule.createItemPreset(new CreateItemPresetDto(userInput.value))
+                        if(!newItemPreset) {
                             $bvToast.toast('Item could not be created', {
                                 variant: 'danger',
                             });
+                            return
                         }
-                        newItem.value.itemSuggestionId = newItemSuggestion._id
+                        console.log(newItemPreset)
+                        newItem.value.itemPreset = newItemPreset._id
                     }
 
                     await ItemModule.createItem(newItem.value);
@@ -88,15 +90,15 @@
             }
 
             watch(
-                () => newItem.value.itemSuggestionId,
+                userInput,
                 (userInput) => {
-                    ItemSuggestionModule.findItemSuggestions(userInput)
+                    ItemPresetModule.findItemPresets(userInput)
                 }
             )
 
             return {
                 newItem,
-                itemSuggestions,
+                itemPresets,
                 createItem,
                 userInput,
                 units

@@ -10,22 +10,22 @@ export class ItemsService {
 
     async create(createItemDto: CreateItemDto): Promise<Item> {
         const createdItem = new this.itemModel(createItemDto);
-        return createdItem.save();
+        return await createdItem.save();
     }
 
     async findAll(): Promise<Item[]> {
-        return this.itemModel.find().populate('itemSuggestion').exec();
+        return await this.itemModel.find().populate('itemPreset').exec();
     }
 
     async patchOne(editedItem): Promise<void> {
-        return this.itemModel.updateOne({ _id: editedItem._id }, editedItem).exec()
+        return await this.itemModel.updateOne({ _id: editedItem._id }, editedItem).exec()
     }
 
-    async deleteOne(id: string): Promise<Item> {
-        return this.itemModel.deleteOne({_id: id}).exec();
+    async deleteOne(id: string): Promise<{ ok?: number; n?: number } & { deletedCount?: number }> {
+        return await this.itemModel.deleteOne({_id: id}).exec();
     }
 
-    async deleteAll(): Promise<Item> {
-        return this.itemModel.deleteMany({}).exec();
+    async deleteAll(): Promise<{ ok?: number; n?: number } & { deletedCount?: number }> {
+        return await this.itemModel.deleteMany({}).exec();
     }
 }
