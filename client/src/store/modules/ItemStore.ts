@@ -3,23 +3,23 @@ import * as rm from "typed-rest-client/RestClient";
 import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-item.dto";
 import {VuexModule, Module, Mutation, Action, getModule} from 'vuex-module-decorators';
 import store from '@/store'
+import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
 
 const rest: rm.RestClient = new rm.RestClient('client', 'http://localhost:3000')
 
 @Module({ dynamic: true, store, name: 'item' })
 class Item extends VuexModule {
-    items: GetItemDto[] = Array<GetItemDto>();
+    itemsGroupedByDay: GetItemGroupedByDayDto[] = Array<GetItemGroupedByDayDto>();
 
     @Mutation
-    setItems(items: GetItemDto[]) {
-        this.items = items
+    setItemsGroupedByDay(itemsGroupedByDay: GetItemGroupedByDayDto[]) {
+        this.itemsGroupedByDay = itemsGroupedByDay
     }
 
-    @Action
+    @Action({commit: 'setItemsGroupedByDay'})
     async fetchItems() {
-        const res: rm.IRestResponse<GetItemDto[]> = await rest.get<GetItemDto[]>('/item')
+        const res: rm.IRestResponse<GetItemGroupedByDayDto[]> = await rest.get<GetItemGroupedByDayDto[]>('/item')
         if(!res.result) return []
-        this.context.commit('setItems', res.result)
         return res.result
     }
 

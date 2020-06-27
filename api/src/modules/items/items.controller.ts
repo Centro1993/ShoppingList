@@ -3,6 +3,7 @@ import { ItemsService } from './items.service';
 import { CreateItemDto } from './dto/create-item.dto';
 import { Item } from './schemas/item.schema';
 import {GetItemDto} from "./dto/get-item.dto";
+import {GetItemGroupedByDayDto} from "./dto/get-item-grouped-by-day.dto";
 
 @Controller('item')
 export class ItemsController {
@@ -19,8 +20,8 @@ export class ItemsController {
     }
 
     @Get()
-    async findAll(): Promise<Item[]> {
-        return await this.itemsService.findAll();
+    async findAll(): Promise<GetItemGroupedByDayDto[]> {
+        return await this.itemsService.findAllAndGroupByDay();
     }
 
     @Delete()

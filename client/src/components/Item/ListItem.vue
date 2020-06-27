@@ -1,24 +1,27 @@
 <template>
     <div>
-        <b-table striped hover :items="items" :fields="fields">
-            <template v-slot:cell(acquired)="data">
-                <b-form-checkbox
-                        :id="`checkbox-${data.index}`"
-                        v-model="data.item.acquired"
-                        v-on:input="patchItem($event, data.item)"
-                >
-                    Gekauft {{data.index}}
-                </b-form-checkbox>
-            </template>
-            <template v-slot:cell(deleteItem)="data">
-                <b-button
-                        variant="danger"
-                        @click="removeItem(data.item._id)"
-                >
-                    Löschen
-                </b-button>
-            </template>
-        </b-table>
+        <div v-for="(day, key) in itemsGroupedByDay" :key="key">
+            <p>{{ day._id }}</p>
+            <b-table striped hover :items="day.items" :fields="fields">
+                <template v-slot:cell(acquired)="data">
+                    <b-form-checkbox
+                            :id="`checkbox-${data.index}`"
+                            v-model="data.item.acquired"
+                            v-on:input="patchItem($event, data.item)"
+                    >
+                        Gekauft {{data.index}}
+                    </b-form-checkbox>
+                </template>
+                <template v-slot:cell(deleteItem)="data">
+                    <b-button
+                            variant="danger"
+                            @click="removeItem(data.item._id)"
+                    >
+                        Löschen
+                    </b-button>
+                </template>
+            </b-table>
+        </div>
         <b-button variant="danger" @click="removeAllItems()">Alle Einträge entfernen</b-button>
     </div>
 </template>
@@ -27,6 +30,7 @@
     import {defineComponent, watchEffect, computed} from "@vue/composition-api";
     import {GetItemDto} from "../../../../api-dist/dist/modules/items/dto/get-item.dto";
     import {ItemStore} from "@/store/modules/ItemStore";
+    import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
 
     export default defineComponent({
         name: "ListItem",
@@ -34,7 +38,7 @@
 
             const {$bvToast} = context.root;
 
-            const items = computed((): GetItemDto[] => ItemStore.items)
+            const itemsGroupedByDay = computed((): GetItemGroupedByDayDto[] => ItemStore.itemsGroupedByDay)
 
             const fields = [
                 {
@@ -99,7 +103,7 @@
                 removeAllItems,
                 patchItem,
                 fields,
-                items
+                itemsGroupedByDay
             }
         }
     });
