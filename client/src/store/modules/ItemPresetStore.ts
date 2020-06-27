@@ -13,7 +13,7 @@ class ItemPreset extends VuexModule {
     itemPresets: GetItemPresetDto[] = Array<GetItemPresetDto>()
 
     @Mutation
-    async setItemPresets(itemPresets: GetItemPresetDto[]) {
+    setItemPresets(itemPresets: GetItemPresetDto[]) {
         this.itemPresets = itemPresets
     }
 
@@ -32,9 +32,14 @@ class ItemPreset extends VuexModule {
     @Action
     async createItemPreset(itemPreset: CreateItemPresetDto): Promise<GetItemPresetDto | null> {
         const res: rm.IRestResponse<GetItemPresetDto> = await rest.create<GetItemPresetDto>('/item-preset', itemPreset)
-        console.log(res.result)
         return res.result
+    }
+
+    @Action
+    async deleteItemPreset(itemPresetId: string): Promise<void> {
+        const res: rm.IRestResponse<void> = await rest.del<void>(`/item-preset/${itemPresetId}`)
+        await this.context.dispatch('fetchItems')
     }
 }
 
-export const ItemPresetModule = getModule(ItemPreset)
+export const ItemPresetStore = getModule(ItemPreset)

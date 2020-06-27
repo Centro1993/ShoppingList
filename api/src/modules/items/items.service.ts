@@ -28,4 +28,8 @@ export class ItemsService {
     async deleteAll(): Promise<{ ok?: number; n?: number } & { deletedCount?: number }> {
         return await this.itemModel.deleteMany({}).exec();
     }
+
+    async deleteWhere(query): Promise<{ ok?: number; n?: number } & { deletedCount?: number }> {
+        return await this.itemModel.deleteMany(query).exec();
+    }
 }

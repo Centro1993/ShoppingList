@@ -11,13 +11,15 @@ class Item extends VuexModule {
     items: GetItemDto[] = Array<GetItemDto>();
 
     @Mutation
-    async setItems(items: GetItemDto[]) {
+    setItems(items: GetItemDto[]) {
         this.items = items
     }
 
-    @Action({ commit: 'setItems' })
+    @Action
     async fetchItems() {
         const res: rm.IRestResponse<GetItemDto[]> = await rest.get<GetItemDto[]>('/item')
+        if(!res.result) return []
+        this.context.commit('setItems', res.result)
         return res.result
     }
 
@@ -46,4 +48,4 @@ class Item extends VuexModule {
     }
 }
 
-export const ItemModule = getModule(Item)
+export const ItemStore = getModule(Item, store)

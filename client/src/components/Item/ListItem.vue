@@ -26,15 +26,15 @@
 <script lang="ts">
     import {defineComponent, watchEffect, computed} from "@vue/composition-api";
     import {GetItemDto} from "../../../../api-dist/dist/modules/items/dto/get-item.dto";
-    import {ItemModule} from "@/store/modules/ItemModule";
+    import {ItemStore} from "@/store/modules/ItemStore";
 
     export default defineComponent({
         name: "ListItem",
         setup(props: any, context: any) {
 
-            const {$store, $bvToast} = context.root;
+            const {$bvToast} = context.root;
 
-            const items = computed((): GetItemDto[] => ItemModule.items)
+            const items = computed((): GetItemDto[] => ItemStore.items)
 
             const fields = [
                 {
@@ -58,16 +58,16 @@
             ]
 
             async function removeItem(id: string) {
-                await ItemModule.removeItem(id)
+                await ItemStore.removeItem(id)
             }
 
             async function removeAllItems() {
-                await ItemModule.removeAllItems()
+                await ItemStore.removeAllItems()
             }
 
             async function fetchData() {
                 try {
-                    await ItemModule.fetchItems()
+                    await ItemStore.fetchItems()
                 } catch (e) {
                     $bvToast.toast(e.message, {
                         variant: 'danger',
@@ -79,7 +79,7 @@
             async function patchItem(acquired: boolean, item: GetItemDto) {
                 item.acquired = acquired
                 try {
-                    await ItemModule.patchItem(item)
+                    await ItemStore.patchItem(item)
                 } catch (e) {
                     $bvToast.toast(e.message, {
                         variant: 'danger',

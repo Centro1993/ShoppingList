@@ -10,11 +10,14 @@
                             id="name"
                             :data="itemPresets"
                             v-model="userInput"
-                            size="lg"
                             :serializer="s => s.name"
+                            size="lg"
                             placeholder="Name"
-                            @hit="newItem.itemPreset = $event"
+                            @hit="newItem.itemPreset = $event._id"
                     >
+                        <template slot="suggestion" slot-scope="{ data, htmlText }">
+                            <span v-html="htmlText"></span>&nbsp;<b-button variant="danger" @click="deleteItemPreset(data._id)">Delete All</b-button>
+                        </template>
                     </vue-bootstrap-typeahead>
                 </b-col>
             </b-row>
@@ -48,8 +51,8 @@
     import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-item.dto";
     import units from "../../../../api-dist/dist/lib/enums/units"
     import {GetItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/get-item-preset.dto";
-    import { ItemModule } from "@/store/modules/ItemModule";
-    import { ItemPresetModule} from "@/store/modules/ItemPresetModule";
+    import { ItemStore } from "@/store/modules/ItemStore";
+    import { ItemPresetStore} from "@/store/modules/ItemPresetStore";
     import {CreateItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/create-item-preset.dto";
 
     export default defineComponent({
@@ -59,29 +62,28 @@
 
             const newItem = ref<CreateItemDto>(new CreateItemDto('', 1));
             const userInput = ref<string>('')
-            const itemPresets = computed<GetItemPresetDto[]>(() => ItemPresetModule.itemPresets)
+            const itemPresets = computed<GetItemPresetDto[]>(() => ItemPresetStore.itemPresets)
 
             async function createItem() {
                 try {
                     // create item suggestion if needed
                     if (newItem.value.itemPreset === '') {
-                        const newItemPreset: GetItemPresetDto | null = await ItemPresetModule.createItemPreset(new CreateItemPresetDto(userInput.value))
+                        const newItemPreset: GetItemPresetDto | null = await ItemPresetStore.createItemPreset(new CreateItemPresetDto(userInput.value))
                         if(!newItemPreset) {
                             $bvToast.toast('Item could not be created', {
                                 variant: 'danger',
                             });
                             return
                         }
-                        console.log(newItemPreset)
                         newItem.value.itemPreset = newItemPreset._id
                     }
-
-                    await ItemModule.createItem(newItem.value);
+                    await ItemStore.createItem(newItem.value);
 
                     // clear previous input
                     userInput.value = ''
-                    newItem.value = new CreateItemDto('', 1)
+                    newItem.value = new CreateItemDto(newItem.value.itemPreset, 1)
                 } catch (e) {
+                    console.log(e)
                     $bvToast.toast(e.message, {
                         variant: 'danger',
                         title: 'Error'
@@ -89,10 +91,14 @@
                 }
             }
 
+            async function deleteItemPreset(itemPresetId: string) {
+                await ItemPresetStore.deleteItemPreset(itemPresetId)
+            }
+
             watch(
                 userInput,
                 (userInput) => {
-                    ItemPresetModule.findItemPresets(userInput)
+                    ItemPresetStore.findItemPresets(userInput)
                 }
             )
 
@@ -100,6 +106,7 @@
                 newItem,
                 itemPresets,
                 createItem,
+                deleteItemPreset,
                 userInput,
                 units
             };

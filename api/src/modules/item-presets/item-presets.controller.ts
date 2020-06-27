@@ -1,12 +1,15 @@
-import {Body, Controller, Delete, Get, Param, Patch, Post, Query, Req} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post, Query} from '@nestjs/common';
 import {ItemPresetsService} from "./item-presets.service";
+import {ItemsService} from "../items/items.service";
 import {CreateItemPresetDto} from "./dto/create-item-preset.dto";
 import {ItemPreset} from "./schemas/item-preset.schema";
-import {GetItemPresetDto} from "./dto/get-item-preset.dto";
 
 @Controller('item-preset')
 export class ItemPresetsController {
-    constructor(private readonly itemPresetsService: ItemPresetsService) {}
+    constructor(
+        private readonly itemPresetsService: ItemPresetsService,
+        private readonly itemsService: ItemsService
+        ) {}
 
     @Get()
     async find(@Query() query): Promise<ItemPreset[]> {
@@ -20,6 +23,7 @@ export class ItemPresetsController {
 
     @Delete(':id')
     async deleteOne(@Param() params): Promise<{ ok?: number; n?: number } & { deletedCount?: number }> {
+        await this.itemsService.deleteWhere({itemPreset: params.id})
         return await this.itemPresetsService.deleteOne(params.id);
     }
 }

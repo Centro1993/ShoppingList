@@ -5,6 +5,9 @@ import { BootstrapVue } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
+import { config } from 'vuex-module-decorators'
+// Set rawError to true by default on all @Action decorators
+config.rawError = true
 
 import App from "./App.vue";
 import "./registerServiceWorker";
