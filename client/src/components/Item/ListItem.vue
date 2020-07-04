@@ -74,10 +74,7 @@
             async function fetchData() {
                 try {
                     await ItemStore.fetchItems()
-                    console.log(dayTablesVisibility.value)
-                    console.log(itemsGroupedByDay.value.length)
                     dayTablesVisibility.value = itemsGroupedByDay.value.map((day: GetItemGroupedByDayDto, index: number) => index === 0)
-                    console.log(dayTablesVisibility.value)
                     context.root.$set(dayTablesVisibility.value, 0, true)
                 } catch (e) {
                     $bvToast.toast(e.message, {
