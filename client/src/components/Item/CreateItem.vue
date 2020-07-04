@@ -7,7 +7,8 @@
                 </b-col>
                 <b-col sm="3">
                     <vue-bootstrap-typeahead
-                            id="name"
+                            ref="nameTypeahead"
+                            id="nameTypeahead"
                             :data="itemPresets"
                             v-model="userInput"
                             :serializer="s => s.name"
@@ -59,6 +60,7 @@
         name: "CreateItem",
         setup(props: any, context: any) {
             const {$bvToast} = context.root;
+            const nameTypeahead = ref(null)
 
             const newItem = ref<CreateItemDto>(new CreateItemDto('', 1));
             const userInput = ref<string>('')
@@ -80,7 +82,7 @@
                     await ItemStore.createItem(newItem.value);
 
                     // clear previous input
-                    userInput.value = ''
+                    nameTypeahead.value.inputValue = ''
                     newItem.value = new CreateItemDto(newItem.value.itemPreset, 1)
                 } catch (e) {
                     console.log(e)
@@ -92,13 +94,24 @@
             }
 
             async function deleteItemPreset(itemPresetId: string) {
+                nameTypeahead.value.inputValue = ''
+                newItem.value.itemPreset = ''
                 await ItemPresetStore.deleteItemPreset(itemPresetId)
             }
 
             watch(
                 userInput,
                 (userInput) => {
+                    // find all item presets matching the input
                     ItemPresetStore.findItemPresets(userInput)
+                    // if there is an exact match, take that as item preset
+                    const itemPresetMatchingUserInput = itemPresets.value.find((itemPreset: GetItemPresetDto) => itemPreset.name.toLowerCase() === userInput.toLowerCase())
+                    if (itemPresetMatchingUserInput) {
+                        newItem.value.itemPreset = itemPresetMatchingUserInput._id
+                        if(nameTypeahead.value !== null) {
+                            nameTypeahead.value.inputValue = itemPresetMatchingUserInput.name
+                        }
+                    }
                 }
             )
 
@@ -108,7 +121,8 @@
                 createItem,
                 deleteItemPreset,
                 userInput,
-                units
+                units,
+                nameTypeahead
             };
         }
     });

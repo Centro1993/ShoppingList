@@ -36,18 +36,21 @@ export class ItemsService {
                 $group: {
                     _id: {
                         $dateToString: {
-                            format: "%d-%m-%Y",
+                            format: "%d.%m.%Y",
                             date: "$createdAt"
                         }
                     },
                     items: {
                         $push: '$$ROOT'
+                    },
+                    createdAt: {
+                        $max: '$createdAt'
                     }
                 }
             },
             {
                 $sort: {
-                    _id: -1
+                    createdAt: -1
                 }
             }
         ])

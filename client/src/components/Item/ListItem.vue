@@ -1,15 +1,15 @@
 <template>
     <div>
-        <div v-for="(day, key) in itemsGroupedByDay" :key="key">
-            <p>{{ day._id }}</p>
-            <b-table striped hover :items="day.items" :fields="fields">
+        <div v-for="(day, index) in itemsGroupedByDay" :key="index">
+            <b-button :variant="dayTablesVisibility[index] ? 'danger' : 'success'" @click="toggleDayTableVisibility(index)">{{ day._id }}</b-button>
+            <b-table striped hover :items="day.items" :fields="fields" v-if="dayTablesVisibility[index]">
                 <template v-slot:cell(acquired)="data">
                     <b-form-checkbox
                             :id="`checkbox-${data.index}`"
                             v-model="data.item.acquired"
                             v-on:input="patchItem($event, data.item)"
                     >
-                        Gekauft {{data.index}}
+                        Gekauft
                     </b-form-checkbox>
                 </template>
                 <template v-slot:cell(deleteItem)="data">
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-    import {defineComponent, watchEffect, computed} from "@vue/composition-api";
+    import {defineComponent, watchEffect, computed, ref, watch} from "@vue/composition-api";
     import {GetItemDto} from "../../../../api-dist/dist/modules/items/dto/get-item.dto";
     import {ItemStore} from "@/store/modules/ItemStore";
     import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
@@ -39,6 +39,8 @@
             const {$bvToast} = context.root;
 
             const itemsGroupedByDay = computed((): GetItemGroupedByDayDto[] => ItemStore.itemsGroupedByDay)
+
+            const dayTablesVisibility = ref<boolean[]>([true])
 
             const fields = [
                 {
@@ -72,6 +74,11 @@
             async function fetchData() {
                 try {
                     await ItemStore.fetchItems()
+                    console.log(dayTablesVisibility.value)
+                    console.log(itemsGroupedByDay.value.length)
+                    dayTablesVisibility.value = itemsGroupedByDay.value.map((day: GetItemGroupedByDayDto, index: number) => index === 0)
+                    console.log(dayTablesVisibility.value)
+                    context.root.$set(dayTablesVisibility.value, 0, true)
                 } catch (e) {
                     $bvToast.toast(e.message, {
                         variant: 'danger',
@@ -92,6 +99,10 @@
                 }
             }
 
+            function toggleDayTableVisibility(index: number): void {
+                context.root.$set(dayTablesVisibility.value, index, !dayTablesVisibility.value[index])
+            }
+
             watchEffect(
                 async () => {
                     await fetchData()
@@ -102,8 +113,10 @@
                 removeItem,
                 removeAllItems,
                 patchItem,
+                toggleDayTableVisibility,
                 fields,
-                itemsGroupedByDay
+                itemsGroupedByDay,
+                dayTablesVisibility
             }
         }
     });

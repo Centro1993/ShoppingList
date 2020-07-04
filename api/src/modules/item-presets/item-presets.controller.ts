@@ -18,6 +18,7 @@ export class ItemPresetsController {
 
     @Post()
     async create(@Body() createItemPresetDto: CreateItemPresetDto) {
+        createItemPresetDto.name = createItemPresetDto.name.charAt(0).toUpperCase() + createItemPresetDto.name.slice(1)
         return await this.itemPresetsService.create(createItemPresetDto);
     }
 
