@@ -1,29 +1,25 @@
 <template>
-    <div>
-        <div v-for="(day, index) in itemsGroupedByDay" :key="index">
-            <b-button :variant="dayTablesVisibility[index] ? 'danger' : 'success'" @click="toggleDayTableVisibility(index)">{{ day._id }}</b-button>
-            <b-table striped hover :items="day.items" :fields="fields" v-if="dayTablesVisibility[index]">
-                <template v-slot:cell(acquired)="data">
-                    <b-form-checkbox
-                            :id="`checkbox-${data.index}`"
-                            v-model="data.item.acquired"
-                            v-on:input="patchItem($event, data.item)"
-                    >
-                        Gekauft
-                    </b-form-checkbox>
-                </template>
-                <template v-slot:cell(deleteItem)="data">
-                    <b-button
-                            variant="danger"
-                            @click="removeItem(data.item._id)"
-                    >
-                        Löschen
-                    </b-button>
-                </template>
-            </b-table>
-        </div>
-        <b-button variant="danger" @click="removeAllItems()">Alle Einträge entfernen</b-button>
-    </div>
+    <b-card-group class="m-4">
+        <b-card v-for="(day, index) in itemsGroupedByDay" :key="index" :header="day._id" @click="toggleDayTableVisibility(index)">
+            <b-list-group v-if="dayTablesVisibility[index]">
+                <b-list-group-item
+                        button
+                        v-for="(item, index) in day.items"
+                        :key="index"
+                        :variant="item.acquired ? 'success': ''"
+                        @click="patchItem($event, item)"
+                >
+                    <p>
+                        {{ item.amount }} {{ item.unit }} {{ item.itemPreset.name }}
+                        <b-icon-trash-fill
+                                variant="danger"
+                                @click="removeItem(item._id)"
+                        />
+                    </p>
+                </b-list-group-item>
+            </b-list-group>
+        </b-card>
+    </b-card-group>
 </template>
 
 <script lang="ts">
@@ -41,27 +37,6 @@
             const itemsGroupedByDay = computed((): GetItemGroupedByDayDto[] => ItemStore.itemsGroupedByDay)
 
             const dayTablesVisibility = ref<boolean[]>([true])
-
-            const fields = [
-                {
-                    key: 'itemPreset.name',
-                    label: 'Name'
-                },
-                {
-                    key: 'amount'
-                },
-                {
-                    key: 'unit'
-                },
-                {
-                    key: 'acquired',
-                    label: ''
-                },
-                {
-                    key: 'deleteItem',
-                    label: ''
-                }
-            ]
 
             async function removeItem(id: string) {
                 await ItemStore.removeItem(id)
@@ -111,7 +86,6 @@
                 removeAllItems,
                 patchItem,
                 toggleDayTableVisibility,
-                fields,
                 itemsGroupedByDay,
                 dayTablesVisibility
             }

@@ -7,6 +7,8 @@ import {Document} from 'mongoose';
 export class ItemPreset extends Document {
     @Prop({ required: true, unique: true })
     name: string;
+
+    unit: string;
 }
 
 export const ItemPresetSchema = SchemaFactory.createForClass(ItemPreset);

@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <h3>
-        Shopping List
-      </h3>
-    </div>
     <router-view />
   </div>
 </template>

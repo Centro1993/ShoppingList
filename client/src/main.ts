@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueCompositionApi from '@vue/composition-api';
 
-import { BootstrapVue } from 'bootstrap-vue'
+import { BootstrapVue, BootstrapVueIcons  } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
@@ -19,6 +19,7 @@ Vue.use(VueCompositionApi)
 
 // Bootstrap plugins
 Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 
 new Vue({

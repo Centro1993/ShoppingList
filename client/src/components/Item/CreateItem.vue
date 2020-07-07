@@ -1,6 +1,12 @@
 <template>
     <div>
-        <b-container fluid>
+        <div class="h1 mb-0 create-item-icon">
+            <b-icon-plus-circle-fill variant="success" v-b-modal.create-item-modal></b-icon-plus-circle-fill>
+        </div>
+        <b-modal id="create-item-modal">
+            <template v-slot:modal-title>
+                Create Item
+            </template>
             <b-row class="my-1">
                 <b-col sm="3">
                     <label for="name">Name</label>
@@ -40,10 +46,11 @@
                     <b-form-select v-model="newItem.unit" id="unit" :options="units"></b-form-select>
                 </b-col>
             </b-row>
-            <div @click="createItem">
-                Eintrag erstellen
-            </div>
-        </b-container>
+
+
+            <b-button class="mb-6" block @click="$bvModal.hide('create-item-modal')">Close</b-button>
+            <b-button class="mb-6" variant="success" block @click="createItem(); $bvModal.hide('create-item-modal')">Create</b-button>
+        </b-modal>
     </div>
 </template>
 
@@ -146,5 +153,13 @@
 
     a {
         color: #42b983;
+    }
+
+    .create-item-icon {
+        position: fixed;
+        right: 0;
+        bottom: 5%;
+        left: 80%;
+        z-index: 1030;
     }
 </style>
