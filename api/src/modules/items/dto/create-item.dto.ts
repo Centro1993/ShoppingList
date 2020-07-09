@@ -9,17 +9,12 @@ export class CreateItemDto {
     @IsPositive()
     amount?: number;
 
-    @IsOptional()
-    @IsIn(units)
-    unit?: string;
-
     @IsBoolean()
     acquired: boolean;
 
-    constructor(itemPreset: string, amount?: number, unit?: string) {
+    constructor(itemPreset: string, amount?: number) {
         this.itemPreset = itemPreset;
         this.amount = amount;
-        this.unit = unit;
         this.acquired = false;
     }
 }

@@ -1,11 +1,14 @@
 import {GetItemDto} from "../../../../api-dist/dist/modules/items/dto/get-item.dto";
 import * as rm from "typed-rest-client/RestClient";
 import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-item.dto";
-import {VuexModule, Module, Mutation, Action, getModule} from 'vuex-module-decorators';
+import {VuexModule, Module, Mutation, Action, getModule, config} from 'vuex-module-decorators';
 import store from '@/store'
 import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
 
 const rest: rm.RestClient = new rm.RestClient('client', 'http://localhost:3000')
+
+// Set rawError to true by default on all @Action decorators
+config.rawError = true
 
 @Module({ dynamic: true, store, name: 'item' })
 class Item extends VuexModule {

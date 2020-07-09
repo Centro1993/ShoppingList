@@ -6,11 +6,11 @@
                         button
                         v-for="(item, index) in day.items"
                         :key="index"
-                        :variant="item.acquired ? 'success': ''"
-                        @click="patchItem($event, item)"
+                        :variant="item.acquired ? 'success': 'dark'"
+                        @click="toggleItemAcquired(item); $event.stopPropagation()"
                 >
                     <p>
-                        {{ item.amount }} {{ item.unit }} {{ item.itemPreset.name }}
+                        {{ item.amount }} {{ item.itemPreset.unit }} {{ item.itemPreset.name }}
                         <b-icon-trash-fill
                                 variant="danger"
                                 @click="removeItem(item._id)"
@@ -59,8 +59,9 @@
                 }
             }
 
-            async function patchItem(acquired: boolean, item: GetItemDto) {
-                item.acquired = acquired
+            async function toggleItemAcquired(item: GetItemDto) {
+                item.acquired = !item.acquired
+
                 try {
                     await ItemStore.patchItem(item)
                 } catch (e) {
@@ -84,7 +85,7 @@
             return {
                 removeItem,
                 removeAllItems,
-                patchItem,
+                toggleItemAcquired,
                 toggleDayTableVisibility,
                 itemsGroupedByDay,
                 dayTablesVisibility

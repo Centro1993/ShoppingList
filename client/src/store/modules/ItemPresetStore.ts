@@ -1,9 +1,12 @@
 
 import * as rm from "typed-rest-client/RestClient";
-import {VuexModule, Module, Mutation, Action, getModule} from 'vuex-module-decorators';
+import {VuexModule, Module, Mutation, Action, getModule, config} from 'vuex-module-decorators';
 import {GetItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/get-item-preset.dto";
 import {CreateItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/create-item-preset.dto";
 import store from '@/store'
+
+// Set rawError to true by default on all @Action decorators
+config.rawError = true
 
 const rest: rm.RestClient = new rm.RestClient('client', 'http://localhost:3000')
 
@@ -22,7 +25,7 @@ class ItemPreset extends VuexModule {
         const res: rm.IRestResponse<GetItemPresetDto[]> = await rest.get<GetItemPresetDto[]>('/item-preset', {
             queryParameters: {
                 params: {
-                    userInput
+                    itemPresetNameUserInput: userInput
                 }
             }
         })
