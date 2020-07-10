@@ -2,6 +2,10 @@
 /dist
 /node_modules
 
+# Ignores compiled TypeScript files
+src/**/*.map
+src/**/*.js
+
 # Logs
 logs
 *.log

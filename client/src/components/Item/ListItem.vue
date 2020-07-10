@@ -1,13 +1,14 @@
 <template>
     <b-card-group class="m-4">
-        <b-card v-for="(day, index) in itemsGroupedByDay" :key="index" :header="day._id" @click="toggleDayTableVisibility(index)">
-            <b-list-group v-if="dayTablesVisibility[index]">
+        <b-card v-for="(day, dayIndex) in itemsGroupedByDay" :key="dayIndex" :header="day._id" @click="toggleDayTableVisibility(dayIndex)">
+            <b-list-group v-if="dayTablesVisibility[dayIndex]">
                 <b-list-group-item
                         button
-                        v-for="(item, index) in day.items"
-                        :key="index"
+                        v-for="(item, itemIndex) in day.items"
+                        :key="itemIndex"
                         :variant="item.acquired ? 'success': 'dark'"
                         @click="toggleItemAcquired(item); $event.stopPropagation()"
+                        :disabled="dayIndex > 0"
                 >
                     <p>
                         {{ item.amount }} {{ item.itemPreset.unit }} {{ item.itemPreset.name }}

@@ -1,9 +1,9 @@
-import {Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Patch, Post, UsePipes} from '@nestjs/common';
 import { ItemsService } from './items.service';
 import { CreateItemDto } from './dto/create-item.dto';
-import { Item } from './schemas/item.schema';
 import {GetItemDto} from "./dto/get-item.dto";
 import {GetItemGroupedByDayDto} from "./dto/get-item-grouped-by-day.dto";
+import {SetAcquiredAtPipe} from "./pipes/set-acquired-at.pipe";
 
 @Controller('item')
 export class ItemsController {
@@ -15,6 +15,7 @@ export class ItemsController {
     }
 
     @Patch()
+    @UsePipes(SetAcquiredAtPipe)
     async patchOne(@Body() editedItem: GetItemDto): Promise<void> {
         return await this.itemsService.patchOne(editedItem)
     }

@@ -10,6 +10,9 @@ export class ItemPreset extends Document {
 
     @Prop()
     unit: string;
+
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 export const ItemPresetSchema = SchemaFactory.createForClass(ItemPreset);

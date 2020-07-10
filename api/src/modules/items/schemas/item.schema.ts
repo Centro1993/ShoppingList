@@ -13,6 +13,12 @@ export class Item extends Document {
 
     @Prop()
     acquired: boolean;
+
+    @Prop()
+    acquiredAt: Date;
+
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 export const ItemSchema = SchemaFactory.createForClass(Item);

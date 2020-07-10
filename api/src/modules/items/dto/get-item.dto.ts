@@ -4,6 +4,7 @@ export class GetItemDto {
     itemPreset: GetItemPresetDto;
     amount: number;
     acquired: boolean;
+    acquiredAt: Date | null;
 
     _id: string;
     createdAt: Date;
