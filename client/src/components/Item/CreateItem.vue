@@ -4,64 +4,71 @@
             <b-icon-plus-circle-fill variant="success" v-b-modal.create-item-modal></b-icon-plus-circle-fill>
         </div>
         <b-modal
-            id="create-item-modal"
-            hide-footer
-            @close="clearItemPreset()"
+                id="create-item-modal"
+                hide-footer
+                @close="clearItemPreset()"
         >
             <template v-slot:modal-title>
-                Create Item
+                <h4><b>Create Item</b></h4>
             </template>
-            <b-row class="my-1">
-                <b-col sm="3">
-                    <label for="name">Name</label>
-                </b-col>
-                <b-col sm="3">
-                    <vue-bootstrap-typeahead
-                            ref="nameTypeahead"
-                            id="nameTypeahead"
-                            :data="itemPresets"
-                            v-model="itemPresetNameUserInput"
-                            :serializer="s => s.name"
-                            size="lg"
-                            placeholder="Name"
-                            @hit="newItem.itemPreset = $event._id"
-                    >
-                        <template slot="suggestion" slot-scope="{ data, htmlText }">
-                            <span v-html="htmlText"></span>
-                            <b-icon-trash-fill
-                                    variant="danger"
-                                    @click="deleteItemPreset(data._id)"
-                            />
-                        </template>
-                    </vue-bootstrap-typeahead>
-                </b-col>
-            </b-row>
-            <br>
-            <b-row class="my-1">
-                <b-col sm="3">
-                    <label for="amount">Menge</label>
-                </b-col>
-                <b-col sm="3">
-                    <b-form-input :value="newItem.amount" v-on:input="newItem.amount = parseFloat($event)" id="amount"
-                                  type="number" placeholder="Menge"/>
-                </b-col>
-            </b-row>
-            <br>
-            <b-row class="my-1">
-                <b-col sm="3">
-                    <label for="unit">Einheit</label>
-                </b-col>
-                <b-col sm="3">
-                    <b-form-select v-model="itemPresetUnitUserInput" id="unit" :options="units"
-                                   :disabled="newItem.itemPreset !== ''"></b-form-select>
-                </b-col>
-            </b-row>
+            <b-form-group class="mb-4">
+                <b-row class="my-1">
+                    <b-col sm="3">
+                        <label for="name">Name</label>
+                    </b-col>
+                    <b-col sm="9">
+                        <vue-bootstrap-typeahead
+                                ref="nameTypeahead"
+                                id="nameTypeahead"
+                                :data="itemPresets"
+                                v-model="itemPresetNameUserInput"
+                                :serializer="s => s.name"
+                                size="lg"
+                                placeholder="Name"
+                                @hit="newItem.itemPreset = $event._id"
+                        >
+                            <template slot="suggestion" slot-scope="{ data, htmlText }">
+                                <span v-html="htmlText"></span>
+                                <b-icon-trash-fill
+                                        variant="danger"
+                                        @click="deleteItemPreset(data._id)"
+                                />
+                            </template>
+                        </vue-bootstrap-typeahead>
+                    </b-col>
+                </b-row>
+                <br>
+                <b-row class="my-1">
+                    <b-col sm="3">
+                        <label for="amount">Menge</label>
+                    </b-col>
+                    <b-col sm="9">
+                        <b-form-input :value="newItem.amount" v-on:input="newItem.amount = parseFloat($event)"
+                                      id="amount"
+                                      type="number" placeholder="Menge"/>
+                    </b-col>
+                </b-row>
+                <br>
+                <b-row class="my-1">
+                    <b-col sm="3">
+                        <label for="unit">Einheit</label>
+                    </b-col>
+                    <b-col sm="9">
+                        <b-form-select v-model="itemPresetUnitUserInput" id="unit" :options="units"
+                                       :disabled="newItem.itemPreset !== ''"></b-form-select>
+                    </b-col>
+                </b-row>
+            </b-form-group>
 
-
-            <b-button class="mb-6" block @click="clearItemPreset(); $bvModal.hide('create-item-modal')">Close</b-button>
-            <b-button class="mb-6" variant="success" block @click="createItem(); $bvModal.hide('create-item-modal')">
-                Create
-            </b-button>
+            <b-form-group class="m-auto">
+                <b-button class="mb-6" block @click="clearItemPreset(); $bvModal.hide('create-item-modal')">
+                    Close
+                </b-button>
+                <b-button class="mb-6" variant="success" block
+                          @click="createItem(); $bvModal.hide('create-item-modal')">
+                    Create
+                </b-button>
+            </b-form-group>
         </b-modal>
     </div>
 </template>

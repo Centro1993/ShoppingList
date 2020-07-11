@@ -1,5 +1,5 @@
 <template>
-    <b-card-group class="m-4">
+    <b-card-group class="m-4" columns>
         <b-card v-for="(day, dayIndex) in itemsGroupedByDay" :key="dayIndex" :header="day._id" @click="toggleDayTableVisibility(dayIndex)">
             <b-list-group v-if="dayTablesVisibility[dayIndex]">
                 <b-list-group-item
@@ -8,11 +8,12 @@
                         :key="itemIndex"
                         :variant="item.acquired ? 'success': 'dark'"
                         @click="toggleItemAcquired(item); $event.stopPropagation()"
-                        :disabled="dayIndex > 0"
+                        :disabled="dayjs().format('DD.MM.YYYY') !== day._id"
                 >
                     <p>
                         {{ item.amount }} {{ item.itemPreset.unit }} {{ item.itemPreset.name }}
                         <b-icon-trash-fill
+                                v-if="dayjs().format('DD.MM.YYYY') === day._id"
                                 variant="danger"
                                 @click="removeItem(item._id)"
                         />
@@ -28,6 +29,7 @@
     import {GetItemDto} from "../../../../api-dist/dist/modules/items/dto/get-item.dto";
     import {ItemStore} from "@/store/modules/ItemStore";
     import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
+    import * as dayjs from 'dayjs'
 
     export default defineComponent({
         name: "ListItem",
@@ -89,7 +91,8 @@
                 toggleItemAcquired,
                 toggleDayTableVisibility,
                 itemsGroupedByDay,
-                dayTablesVisibility
+                dayTablesVisibility,
+                dayjs
             }
         }
     });
