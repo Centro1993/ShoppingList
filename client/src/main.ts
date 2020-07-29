@@ -5,11 +5,14 @@ import { BootstrapVue, BootstrapVueIcons  } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
+import io from "socket.io-client"
 
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
+import globalConfiguration from '../../api-dist/dist/config/configuration'
+const globalConfig = globalConfiguration()
 
 Vue.config.productionTip = false;
 Vue.use(VueCompositionApi)
@@ -18,6 +21,17 @@ Vue.use(VueCompositionApi)
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
+
+// Socket.IO
+const socket = io(globalConfig.apiUrl);
+socket.connect()
+socket.on('connected')
+Vue.prototype.$socket = socket
+export const $socket = socket
+
+// DayJs
+import dayjs from 'dayjs';
+Vue.prototype.$dayjs = dayjs().add(2, 'h')
 
 new Vue({
   router,

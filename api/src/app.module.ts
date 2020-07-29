@@ -4,6 +4,7 @@ import { ItemsModule } from './modules/items/items.module';
 import { ItemPresetsModule } from './modules/item-presets/item-presets.module';
 import { ConfigModule } from '@nestjs/config';
 import configuration from 'src/config/configuration'
+import {AppGateway} from "./app.gateway";
 
 @Module({
   imports: [
@@ -14,6 +15,6 @@ import configuration from 'src/config/configuration'
     }),
     ItemsModule,
     ItemPresetsModule
-  ],
+  ]
 })
 export class AppModule {}

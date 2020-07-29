@@ -4,11 +4,14 @@ import {InjectModel} from '@nestjs/mongoose';
 import {CreateItemDto} from './dto/create-item.dto';
 import {Item} from "./schemas/item.schema";
 import {GetItemGroupedByDayDto} from "./dto/get-item-grouped-by-day.dto";
-import * as dayjs from 'dayjs'
+import {DayjsProvider} from "../../dayjs.provider";
 
 @Injectable()
 export class ItemsService {
-    constructor(@InjectModel('Item') private itemModel: Model<Item>) {
+    constructor(
+        @InjectModel('Item') private itemModel: Model<Item>,
+        private dayjsProvider: DayjsProvider
+    ) {
     }
 
     async create(createItemDto: CreateItemDto): Promise<Item> {
@@ -85,7 +88,7 @@ export class ItemsService {
         if (notAcquiredItems.length > 0) {
             // join not acquired items with acquired items
             // acquired items are sorted under the current date (create if it does not exist)
-            const currentDateFormatted = dayjs().format('DD.MM.YYYY')
+            const currentDateFormatted = this.dayjsProvider.dayjs().format('DD.MM.YYYY')
             let itemsGroupedByDayCurrentDateIndex = acquiredItemsGroupedByDay.findIndex(itemsGroupedByDay => itemsGroupedByDay._id === currentDateFormatted)
             
             if (itemsGroupedByDayCurrentDateIndex !== -1) {

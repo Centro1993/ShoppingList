@@ -8,12 +8,12 @@
                         :key="itemIndex"
                         :variant="item.acquired ? 'success': 'dark'"
                         @click="toggleItemAcquired(item); $event.stopPropagation()"
-                        :disabled="dayjs().format('DD.MM.YYYY') !== day._id"
+                        :disabled="$dayjs.format('DD.MM.YYYY') !== day._id"
                 >
                     <p>
                         {{ item.amount }} {{ item.itemPreset.unit }} {{ item.itemPreset.name }}
                         <b-icon-trash-fill
-                                v-if="dayjs().format('DD.MM.YYYY') === day._id"
+                                v-if="$dayjs.format('DD.MM.YYYY') === day._id"
                                 variant="danger"
                                 @click="removeItem(item._id)"
                         />
@@ -25,17 +25,21 @@
 </template>
 
 <script lang="ts">
-    import {defineComponent, watchEffect, computed, ref, watch} from "@vue/composition-api";
+    import {defineComponent, watchEffect, computed, ref} from "@vue/composition-api";
     import {GetItemDto} from "../../../../api-dist/dist/modules/items/dto/get-item.dto";
     import {ItemStore} from "@/store/modules/ItemStore";
     import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
-    import * as dayjs from 'dayjs'
 
     export default defineComponent({
         name: "ListItem",
         setup(props: any, context: any) {
 
-            const {$bvToast} = context.root;
+            const {$bvToast, $socket, $dayjs } = context.root;
+
+            $socket.on('updated', async () => {
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                await fetchData()
+            })
 
             const itemsGroupedByDay = computed((): GetItemGroupedByDayDto[] => ItemStore.itemsGroupedByDay)
 
@@ -91,8 +95,7 @@
                 toggleItemAcquired,
                 toggleDayTableVisibility,
                 itemsGroupedByDay,
-                dayTablesVisibility,
-                dayjs
+                dayTablesVisibility
             }
         }
     });

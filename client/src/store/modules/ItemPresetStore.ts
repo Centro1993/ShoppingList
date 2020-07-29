@@ -1,14 +1,16 @@
-
 import * as rm from "typed-rest-client/RestClient";
 import {VuexModule, Module, Mutation, Action, getModule, config} from 'vuex-module-decorators';
 import {GetItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/get-item-preset.dto";
 import {CreateItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/create-item-preset.dto";
 import store from '@/store'
+import globalConfiguration from '../../../../api-dist/dist/config/configuration'
+const globalConfig = globalConfiguration()
+import { $socket } from '../../main'
 
 // Set rawError to true by default on all @Action decorators
 config.rawError = true
 
-const rest: rm.RestClient = new rm.RestClient('client', 'http://localhost:3000')
+const rest: rm.RestClient = new rm.RestClient('client', globalConfig.apiUrl)
 
 @Module({ dynamic: true, store, name: 'itemPreset' })
 class ItemPreset extends VuexModule {
@@ -42,6 +44,7 @@ class ItemPreset extends VuexModule {
     async deleteItemPreset(itemPresetId: string): Promise<void> {
         const res: rm.IRestResponse<void> = await rest.del<void>(`/item-preset/${itemPresetId}`)
         await this.context.dispatch('fetchItems')
+        $socket.emit('updated')
     }
 }
 

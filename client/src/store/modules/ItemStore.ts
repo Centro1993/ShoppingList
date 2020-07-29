@@ -4,8 +4,11 @@ import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-
 import {VuexModule, Module, Mutation, Action, getModule, config} from 'vuex-module-decorators';
 import store from '@/store'
 import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
+import globalConfiguration from '../../../../api-dist/dist/config/configuration'
+const globalConfig = globalConfiguration()
+import { $socket } from '../../main'
 
-const rest: rm.RestClient = new rm.RestClient('client', 'http://localhost:3000')
+const rest: rm.RestClient = new rm.RestClient('client', globalConfig.apiUrl)
 
 // Set rawError to true by default on all @Action decorators
 config.rawError = true
@@ -20,6 +23,7 @@ class Item extends VuexModule {
     }
 
     @Action({commit: 'setItemsGroupedByDay'})
+    // eslint-disable-next-line @typescript-eslint/camelcase
     async fetchItems() {
         const res: rm.IRestResponse<GetItemGroupedByDayDto[]> = await rest.get<GetItemGroupedByDayDto[]>('/item')
         if(!res.result) return []
@@ -30,24 +34,28 @@ class Item extends VuexModule {
     async createItem(newItem: CreateItemDto) {
         await rest.create<CreateItemDto>('/item', newItem)
         await this.fetchItems()
+        $socket.emit('updated')
     }
 
     @Action
     async patchItem(editedItem: GetItemDto) {
         await rest.update<void>(`/item`, editedItem)
         await this.fetchItems()
+        $socket.emit('updated')
     }
 
     @Action
     async removeItem(id: string) {
         await rest.del<GetItemDto>(`/item/${id}`)
         await this.fetchItems()
+        $socket.emit('updated')
     }
 
     @Action
     async removeAllItems() {
         await rest.del<GetItemDto>(`/item`)
         await this.fetchItems()
+        $socket.emit('updated')
     }
 }
 

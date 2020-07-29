@@ -4,10 +4,14 @@ import { CreateItemDto } from './dto/create-item.dto';
 import {GetItemDto} from "./dto/get-item.dto";
 import {GetItemGroupedByDayDto} from "./dto/get-item-grouped-by-day.dto";
 import {SetAcquiredAtPipe} from "./pipes/set-acquired-at.pipe";
+import {AppGateway} from "../../app.gateway";
 
 @Controller('item')
 export class ItemsController {
-    constructor(private readonly itemsService: ItemsService) {}
+    constructor(
+        private readonly itemsService: ItemsService,
+        private readonly appGateway: AppGateway
+        ) {}
 
     @Post()
     async create(@Body() createItemDto: CreateItemDto) {
