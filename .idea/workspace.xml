@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a5a3e21-e92e-4901-9de1-2dd0c6e7cf29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prod.docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/prod.docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.prod.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api.prod.Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +92,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Debug" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229" restartOnDisconnect="true">
       <method v="2" />
     </configuration>
@@ -133,7 +146,7 @@
       <workItem from="1596069762871" duration="2189000" />
       <workItem from="1596223850398" duration="23000" />
       <workItem from="1596586214132" duration="6916000" />
-      <workItem from="1596628367493" duration="2238000" />
+      <workItem from="1596628367493" duration="2371000" />
     </task>
     <servers />
   </component>

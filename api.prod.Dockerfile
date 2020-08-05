@@ -13,6 +13,6 @@ FROM node:12.16.1-alpine3.10 AS production
 
 COPY --from=builder /app/api-dist /app/api-dist
 
-EXPOSE 3000
 CMD ["node", "/app/api-dist/dist/main"]
+EXPOSE 3000
 STOPSIGNAL SIGTERM
