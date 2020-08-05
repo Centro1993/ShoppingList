@@ -5,7 +5,7 @@
   "scripts": {
     "start": "docker-compose build && docker-compose up",
     "build:prod": "docker-compose -f prod.docker-compose.yml build",
-    "start:prod": "docker-compose -f prod.docker-compose.yml up"
+    "start:prod": "docker-compose -f prod.docker-compose.yml up -d"
   },
   "author": "Jonas Leitner",
   "license": "ISC"
