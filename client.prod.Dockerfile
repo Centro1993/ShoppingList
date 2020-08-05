@@ -19,8 +19,8 @@ RUN npm run build
 
 ### Stage Serve Prod ###
 FROM nginx AS production
-COPY --from=builder --chown=nginx:nginx /home/node/app/client/dist /usr/share/nginx/html
-COPY --from=builder --chown=nginx:nginx /home/node/app/client/nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /home/node/app/client/dist /usr/share/nginx/html
+COPY --from=builder /home/node/app/client/nginx.conf /etc/nginx/nginx.conf
 RUN chown -R nginx:nginx /usr/share/nginx/html
 RUN chown nginx:nginx /etc/nginx/nginx.conf
 
