@@ -3,14 +3,12 @@ import {VuexModule, Module, Mutation, Action, getModule, config} from 'vuex-modu
 import {GetItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/get-item-preset.dto";
 import {CreateItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/create-item-preset.dto";
 import store from '@/store'
-import globalConfiguration from '../../../../api-dist/dist/config/configuration'
-const globalConfig = globalConfiguration()
 import { $socket } from '../../main'
 
 // Set rawError to true by default on all @Action decorators
 config.rawError = true
 
-const rest: rm.RestClient = new rm.RestClient('client', globalConfig.apiUrl)
+const rest: rm.RestClient = new rm.RestClient('client', process.env.VUE_APP_API_URL)
 
 @Module({ dynamic: true, store, name: 'itemPreset' })
 class ItemPreset extends VuexModule {

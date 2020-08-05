@@ -4,11 +4,10 @@ import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-
 import {VuexModule, Module, Mutation, Action, getModule, config} from 'vuex-module-decorators';
 import store from '@/store'
 import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
-import globalConfiguration from '../../../../api-dist/dist/config/configuration'
-const globalConfig = globalConfiguration()
 import { $socket } from '../../main'
 
-const rest: rm.RestClient = new rm.RestClient('client', globalConfig.apiUrl)
+console.log(process.env)
+const rest: rm.RestClient = new rm.RestClient('client', process.env.VUE_APP_API_URL)
 
 // Set rawError to true by default on all @Action decorators
 config.rawError = true

@@ -11,8 +11,7 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import globalConfiguration from '../../api-dist/dist/config/configuration'
-const globalConfig = globalConfiguration()
+console.log(process.env)
 
 Vue.config.productionTip = false;
 Vue.use(VueCompositionApi)
@@ -23,7 +22,7 @@ Vue.use(BootstrapVueIcons)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 
 // Socket.IO
-const socket = io(globalConfig.apiUrl);
+const socket = io(process.env.VUE_APP_API_URL+'');
 socket.connect()
 Vue.prototype.$socket = socket
 export const $socket = socket
