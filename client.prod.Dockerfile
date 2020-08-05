@@ -21,7 +21,11 @@ RUN npm run build
 FROM nginx AS production
 COPY --from=builder --chown=nginx:nginx /home/node/app/client/dist /usr/share/nginx/html
 COPY --from=builder --chown=nginx:nginx /home/node/app/client/nginx.conf /etc/nginx/nginx.conf
+RUN chown -R nginx:nginx /usr/share/nginx/html
+RUN chown nginx:nginx /etc/nginx/nginx.conf
+
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
+
 EXPOSE 8080
 STOPSIGNAL SIGTERM
