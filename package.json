@@ -4,7 +4,7 @@
   "description": "A Simple shopping list, made as a learning project with VueJS and NestJS in Typescript.",
   "scripts": {
     "start": "docker-compose build && docker-compose up",
-    "start:prod": "docker-compose -f prod.docker-compose.yml build && docker-compose -f prod.docker-compose.yml up"
+    "start:prod": "docker-compose -f prod.docker-compose.yml build && docker-compose -f prod.docker-compose.yml up -d"
   },
   "author": "Jonas Leitner",
   "license": "ISC"

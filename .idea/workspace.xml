@@ -20,11 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5a3e21-e92e-4901-9de1-2dd0c6e7cf29" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Item/CreateItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item/CreateItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +142,7 @@
       <workItem from="1596064672488" duration="4490000" />
       <workItem from="1596069762871" duration="2189000" />
       <workItem from="1596223850398" duration="23000" />
-      <workItem from="1596586214132" duration="5959000" />
+      <workItem from="1596586214132" duration="6308000" />
     </task>
     <servers />
   </component>
