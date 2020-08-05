@@ -25,7 +25,6 @@ Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 // Socket.IO
 const socket = io(globalConfig.apiUrl);
 socket.connect()
-socket.on('connected')
 Vue.prototype.$socket = socket
 export const $socket = socket
 

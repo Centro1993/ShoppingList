@@ -86,7 +86,7 @@
         name: "CreateItem",
         setup(props: any, context: any) {
             const {$bvToast} = context.root;
-            const nameTypeahead = ref(null)
+            const nameTypeahead = ref({inputValue: ''})
 
             const newItem = ref<CreateItemDto>(new CreateItemDto('', 1));
             const itemPresetNameUserInput = ref<string>('')
@@ -94,7 +94,7 @@
             const itemPresets = computed<GetItemPresetDto[]>(() => ItemPresetStore.itemPresets)
 
             function clearItemPreset() {
-                if (nameTypeahead.value) nameTypeahead.value.inputValue = ''
+                if(nameTypeahead.value) nameTypeahead.value.inputValue = ''
                 itemPresetNameUserInput.value = ''
                 itemPresetUnitUserInput.value = ''
                 newItem.value.itemPreset = ''
