@@ -13,7 +13,10 @@ COPY /api-dist ../api-dist
 
 RUN npm install
 RUN npm ci
+
 ENV NODE_ENV=production
+ARG API_URL
+ENV VUE_APP_API_URL $API_URL
 
 RUN npm run build
 
