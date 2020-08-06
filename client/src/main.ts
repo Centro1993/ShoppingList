@@ -1,4 +1,7 @@
+import '@babel/polyfill'
+import 'mutationobserver-shim'
 import Vue from "vue";
+import './plugins/bootstrap-vue'
 import VueCompositionApi from '@vue/composition-api';
 
 import { BootstrapVue, BootstrapVueIcons  } from 'bootstrap-vue'
