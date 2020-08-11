@@ -20,6 +20,7 @@ Vue.config.productionTip = false;
 Vue.use(VueCompositionApi)
 
 // Bootstrap plugins
+// TODO treeshake
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)

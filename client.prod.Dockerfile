@@ -15,6 +15,7 @@ RUN npm install
 RUN npm ci
 
 ENV NODE_ENV=production
+# env vars needed for build process from docker-compose file
 ARG API_URL
 ENV VUE_APP_API_URL $API_URL
 
