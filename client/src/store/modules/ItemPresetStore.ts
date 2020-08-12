@@ -10,7 +10,7 @@ import { $socket } from '@/main'
 config.rawError = true
 
 const rest = axios.create({
-    baseURL: process.env.VUE_APP_API_URL + process.env.VUE_APP_API_URL || ''
+    baseURL: process.env['VUE_APP_API_URL'] + ['process.env.VUE_APP_API_URL']
 })
 
 @Module({ dynamic: true, store, name: 'itemPreset' })
