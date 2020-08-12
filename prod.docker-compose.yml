@@ -19,7 +19,7 @@ services:
     command: ["node", "/app/api-dist/dist/main"]
     environment:
       MONGODB_URI: 'mongodb://mongodb:27017/shoppingList'
-      API_URL: 'http://shoppinglist.jonasleitner.de/api'
+      API_URL: 'https://shoppinglist.jonasleitner.de/api'
     depends_on:
       - mongodb
     ports:
