@@ -15,7 +15,7 @@
                         <b-icon-trash-fill
                                 v-if="$dayjs.format('DD.MM.YYYY') === day._id"
                                 variant="danger"
-                                @click="removeItem(item._id)"
+                                @click="removeItem(item._id); $event.stopPropagation()"
                         />
                     </p>
                 </b-list-group-item>
