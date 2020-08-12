@@ -18,7 +18,7 @@ services:
       dockerfile: api.prod.Dockerfile
     command: ["node", "/app/api-dist/dist/main"]
     environment:
-      MONGODB_URI: 'mongodb://10.18.12.119:27017/shoppingList'
+      MONGODB_URI: 'mongodb://0.0.0.0:27017/shoppingList'
       API_URL: 'http://shoppinglist.jonasleitner.de/api'
     ports:
       - 3000:3000
