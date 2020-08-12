@@ -8,7 +8,7 @@ import axios from "axios";
 import { AxiosResponse } from "axios";
 
 const rest = axios.create({
-    baseURL: process.env.VUE_APP_API_URL + process.env.VUE_APP_API_PATH
+    baseURL: process.env.VUE_APP_API_URL + process.env.VUE_APP_API_PATH || ''
 })
 
 // Set rawError to true by default on all @Action decorators
