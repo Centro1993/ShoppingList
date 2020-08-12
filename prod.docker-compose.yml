@@ -22,3 +22,12 @@ services:
       API_URL: 'http://shoppinglist.jonasleitner.de/api'
     ports:
       - 3000:3000
+
+  mongodb:
+    logging:
+      driver: none
+    image: mongo:4.2.7-bionic
+    ports:
+      - 27017:27017
+    volumes:
+      - /var/lib/mongodb:/data/db
