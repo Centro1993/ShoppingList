@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: client.prod.Dockerfile
       args:
-        API_URL: 'http://shoppinglist.jonasleitner.de/api'
+        API_URL: 'https://shoppinglist.jonasleitner.de/api'
     depends_on:
       - api
     ports:
