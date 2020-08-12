@@ -3,12 +3,12 @@ import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-
 import {VuexModule, Module, Mutation, Action, getModule, config} from 'vuex-module-decorators';
 import store from '@/store'
 import {GetItemGroupedByDayDto} from "../../../../api-dist/dist/modules/items/dto/get-item-grouped-by-day.dto";
-import { $socket } from '../../main'
+import { $socket } from '@/main'
 import axios from "axios";
 import { AxiosResponse } from "axios";
 
 const rest = axios.create({
-    baseURL: process.env.VUE_APP_API_URL
+    baseURL: process.env.VUE_APP_API_URL + process.env.VUE_APP_API_PATH
 })
 
 // Set rawError to true by default on all @Action decorators

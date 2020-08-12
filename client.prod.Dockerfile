@@ -18,6 +18,8 @@ ENV NODE_ENV=production
 # env vars needed for build process from docker-compose file
 ARG API_URL
 ENV VUE_APP_API_URL $API_URL
+ARG API_PATH
+ENV VUE_APP_API_PATH $API_PATH
 
 RUN npm run build
 
