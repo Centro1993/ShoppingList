@@ -24,6 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7a5a3e21-e92e-4901-9de1-2dd0c6e7cf29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Item/CreateItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item/CreateItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Item/ListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item/ListItem.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +96,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,7 +158,8 @@
       <workItem from="1597074042169" duration="3821000" />
       <workItem from="1597179089077" duration="2856000" />
       <workItem from="1597184709609" duration="11414000" />
-      <workItem from="1597229690737" duration="5685000" />
+      <workItem from="1597229690737" duration="6515000" />
+      <workItem from="1597239969175" duration="1048000" />
     </task>
     <servers />
   </component>

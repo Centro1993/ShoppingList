@@ -9,7 +9,7 @@
                 @close="clearItemPreset()"
         >
             <template v-slot:modal-title>
-                <h4><b>Create Item</b></h4>
+                <h4><b>Eintrag erstellen</b></h4>
             </template>
             <b-form-group class="mb-4">
                 <b-row class="my-1">

@@ -1,6 +1,11 @@
 <template>
     <b-card-group class="m-4" columns>
-        <b-card v-for="(day, dayIndex) in itemsGroupedByDay" :key="dayIndex" :header="day._id" @click="toggleDayTableVisibility(dayIndex)">
+        <b-card
+            v-for="(day, dayIndex) in itemsGroupedByDay"
+            :key="dayIndex" :header="day._id === todaysDateAsFormattedString ? 'Einkaufsliste' : day._id"
+            @click="toggleDayTableVisibility(dayIndex)"
+            :no-body="!dayTablesVisibility[dayIndex]"
+        >
             <b-list-group v-if="dayTablesVisibility[dayIndex]">
                 <b-list-group-item
                         button
@@ -8,12 +13,12 @@
                         :key="itemIndex"
                         :variant="item.acquired ? 'success': 'dark'"
                         @click="toggleItemAcquired(item); $event.stopPropagation()"
-                        :disabled="$dayjs.format('DD.MM.YYYY') !== day._id"
+                        :disabled="todaysDateAsFormattedString !== day._id"
                 >
                     <p>
                         {{ item.amount }} {{ item.itemPreset.unit }} {{ item.itemPreset.name }}
                         <b-icon-trash-fill
-                                v-if="$dayjs.format('DD.MM.YYYY') === day._id"
+                                v-if="todaysDateAsFormattedString === day._id"
                                 variant="danger"
                                 @click="removeItem(item._id); $event.stopPropagation()"
                         />
@@ -44,6 +49,8 @@
             const itemsGroupedByDay = computed((): GetItemGroupedByDayDto[] => ItemStore.itemsGroupedByDay)
 
             const dayTablesVisibility = ref<boolean[]>([true])
+
+            const todaysDateAsFormattedString = ref<string>($dayjs.format('DD.MM.YYYY'))
 
             async function removeItem(id: string) {
                 await ItemStore.removeItem(id)
@@ -95,7 +102,8 @@
                 toggleItemAcquired,
                 toggleDayTableVisibility,
                 itemsGroupedByDay,
-                dayTablesVisibility
+                dayTablesVisibility,
+                todaysDateAsFormattedString
             }
         }
     });
