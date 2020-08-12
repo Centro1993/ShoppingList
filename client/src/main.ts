@@ -5,7 +5,6 @@ import './plugins/bootstrap-vue'
 import VueCompositionApi from '@vue/composition-api';
 import environment from './environment'
 
-import { BootstrapVue, BootstrapVueIcons  } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
@@ -21,8 +20,14 @@ Vue.config.productionTip = false;
 Vue.use(VueCompositionApi)
 
 // Bootstrap plugins
-// TODO treeshake
-Vue.use(BootstrapVue)
+import { ModalPlugin, ListGroupPlugin, CardPlugin, LayoutPlugin, FormGroupPlugin, FormInputPlugin, FormSelectPlugin, ButtonPlugin, BootstrapVueIcons  } from 'bootstrap-vue'
+Vue.use(ListGroupPlugin)
+Vue.use(CardPlugin)
+Vue.use(LayoutPlugin)
+Vue.use(FormGroupPlugin)
+Vue.use(FormInputPlugin)
+Vue.use(FormSelectPlugin)
+Vue.use(ButtonPlugin)
 Vue.use(BootstrapVueIcons)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 
