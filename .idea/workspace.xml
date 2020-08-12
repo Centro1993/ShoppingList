@@ -94,6 +94,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Debug" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229" restartOnDisconnect="true">
       <method v="2" />
     </configuration>
@@ -143,7 +154,7 @@
       <workItem from="1597074042169" duration="3821000" />
       <workItem from="1597179089077" duration="2856000" />
       <workItem from="1597184709609" duration="11414000" />
-      <workItem from="1597229690737" duration="1975000" />
+      <workItem from="1597229690737" duration="2688000" />
     </task>
     <servers />
   </component>

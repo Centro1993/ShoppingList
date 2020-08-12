@@ -3,6 +3,7 @@ import 'mutationobserver-shim'
 import Vue from "vue";
 import './plugins/bootstrap-vue'
 import VueCompositionApi from '@vue/composition-api';
+import environment from './environment'
 
 import { BootstrapVue, BootstrapVueIcons  } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -26,7 +27,7 @@ Vue.use(BootstrapVueIcons)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 
 // Socket.IO
-const socket = io(process.env['VUE_APP_API_URL']);
+const socket = io(process.env.VUE_APP_API_URL);
 socket.connect()
 Vue.prototype.$socket = socket
 export const $socket = socket
