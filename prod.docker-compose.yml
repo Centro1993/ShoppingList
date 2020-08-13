@@ -11,7 +11,7 @@ services:
     depends_on:
       - api
     ports:
-    - 8080:8080
+    - 127.0.0.1:8080:8080
 
   api:
     build:
@@ -25,13 +25,13 @@ services:
     depends_on:
       - mongodb
     ports:
-      - 3000:3000
+      - 127.0.0.1:3000:3000
 
   mongodb:
     logging:
       driver: none
     image: mongo:4.2.7-bionic
     ports:
-      - 27017:27017
+      - 127.0.0.1:27017:27017
     volumes:
       - /var/lib/mongodb:/data/db
