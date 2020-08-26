@@ -7,10 +7,10 @@ export class CreateItemPresetDto {
 
     @IsOptional()
     @IsIn(units)
-    unit: string;
+    unit?: string;
 
     constructor(name: string, unit?: string) {
         this.name = name;
-        this.unit = unit;
+        this.unit = unit || null;
     }
 }

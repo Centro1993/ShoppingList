@@ -36,7 +36,9 @@ class ItemPreset extends VuexModule {
     @Action
     async createItemPreset(itemPreset: CreateItemPresetDto): Promise<GetItemPresetDto | null> {
         const res: AxiosResponse<GetItemPresetDto> = await rest.post<GetItemPresetDto>('/item-preset', itemPreset)
-        return res.data
+        const newItemPreset = res.data
+        this.itemPresets.push(newItemPreset)
+        return newItemPreset
     }
 
     @Action

@@ -39,7 +39,7 @@
         name: "ListItem",
         setup(props: any, context: any) {
 
-            const {$bvToast, $socket, $dayjs } = context.root;
+            const { $bvToast, $socket, $dayjs } = context.root;
 
             $socket.on('updated', async () => {
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define

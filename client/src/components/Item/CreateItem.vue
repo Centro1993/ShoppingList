@@ -85,7 +85,7 @@
     export default defineComponent({
         name: "CreateItem",
         setup(props: any, context: any) {
-            const {$bvToast} = context.root;
+            const { $bvToast } = context.root;
             const nameTypeahead = ref({inputValue: ''})
 
             const newItem = ref<CreateItemDto>(new CreateItemDto('', 1));
@@ -106,10 +106,10 @@
             }
 
             function setItemPreset(itemPreset: GetItemPresetDto) {
-                nameTypeahead.value.inputValue = itemPreset.name
-                itemPresetUnitUserInput.value = itemPreset.unit
-                itemPresetNameUserInput.value = itemPreset.name
-                newItem.value.itemPreset = itemPreset._id
+              nameTypeahead.value.inputValue = itemPreset.name
+              itemPresetUnitUserInput.value = itemPreset.unit
+              itemPresetNameUserInput.value = itemPreset.name
+              newItem.value.itemPreset = itemPreset._id
             }
 
             async function createItem() {

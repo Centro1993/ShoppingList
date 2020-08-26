@@ -20,7 +20,18 @@ Vue.config.productionTip = false;
 Vue.use(VueCompositionApi)
 
 // Bootstrap plugins
-import { ModalPlugin, ListGroupPlugin, CardPlugin, LayoutPlugin, FormGroupPlugin, FormInputPlugin, FormSelectPlugin, ButtonPlugin, BootstrapVueIcons  } from 'bootstrap-vue'
+import {
+  ModalPlugin,
+  ListGroupPlugin,
+  CardPlugin,
+  LayoutPlugin,
+  FormGroupPlugin,
+  FormInputPlugin,
+  FormSelectPlugin,
+  ButtonPlugin,
+  BootstrapVueIcons
+} from 'bootstrap-vue'
+Vue.use(ModalPlugin)
 Vue.use(ListGroupPlugin)
 Vue.use(CardPlugin)
 Vue.use(LayoutPlugin)
