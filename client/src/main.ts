@@ -42,6 +42,10 @@ Vue.use(ButtonPlugin)
 Vue.use(BootstrapVueIcons)
 Vue.component('vue-bootstrap-typeahead', VueBootstrapTypeahead)
 
+// HammerJS
+import { VueHammer } from 'vue2-hammer'
+Vue.use(VueHammer)
+
 // Socket.IO
 const socket = io(process.env.VUE_APP_API_URL);
 socket.connect()

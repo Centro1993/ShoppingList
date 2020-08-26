@@ -14,14 +14,10 @@
                         :variant="item.acquired ? 'success': 'dark'"
                         @click="toggleItemAcquired(item); $event.stopPropagation()"
                         :disabled="todaysDateAsFormattedString !== day._id"
+                        v-hammer:swipe.left="($event) => removeItem(item._id)"
                 >
                     <p>
                         {{ item.amount }} {{ item.itemPreset.unit }} {{ item.itemPreset.name }}
-                        <b-icon-trash-fill
-                                v-if="todaysDateAsFormattedString === day._id"
-                                variant="danger"
-                                @click="removeItem(item._id); $event.stopPropagation()"
-                        />
                     </p>
                 </b-list-group-item>
             </b-list-group>
@@ -54,6 +50,10 @@
 
             async function removeItem(id: string) {
                 await ItemStore.removeItem(id)
+                $bvToast.toast("Eintrag entfernt", {
+                  variant: 'info',
+                  title: 'Info'
+                })
             }
 
             async function removeAllItems() {
