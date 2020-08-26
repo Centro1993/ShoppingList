@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@types/socket.io-client": "^1.4.33",
+    "@types/vue2-hammer": "^2.1.1",
     "@vue/composition-api": "^0.5.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
