@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f97d860-1f22-41c0-892a-2e616c7a5ced" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Item/ListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Item/ListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/modules/items/items.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,11 @@
     <property name="ts.external.directory.path" value="\\wsl$\Ubuntu-20.04\home\jonas\Projekte\shopping-list\client\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="Debug" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229" restartOnDisconnect="true">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,7 +46,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599600856176</updated>
-      <workItem from="1599600858859" duration="1341000" />
+      <workItem from="1599600858859" duration="1886000" />
     </task>
     <servers />
   </component>
@@ -63,9 +68,41 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599602430867">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/-3840.0.2560.1413/0.0.2560.1400@0.0.2560.1400" timestamp="1599602430867" />
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom" timestamp="1599602757419">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.0.bottom/-3840.0.2560.1413/0.0.2560.1400@0.0.2560.1400" timestamp="1599602757419" />
+    <state width="2517" height="492" key="GridCell.Tab.0.center" timestamp="1599602757419">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.0.center/-3840.0.2560.1413/0.0.2560.1400@0.0.2560.1400" timestamp="1599602757419" />
+    <state width="2517" height="492" key="GridCell.Tab.0.left" timestamp="1599602757419">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.0.left/-3840.0.2560.1413/0.0.2560.1400@0.0.2560.1400" timestamp="1599602757419" />
+    <state width="2517" height="492" key="GridCell.Tab.0.right" timestamp="1599602757419">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.0.right/-3840.0.2560.1413/0.0.2560.1400@0.0.2560.1400" timestamp="1599602757419" />
     <state x="-2742" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598405415021">
       <screen x="-3840" y="0" width="2560" height="1413" />
     </state>
     <state x="-2742" y="615" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3840.0.2560.1413/0.0.2560.1400@-3840.0.2560.1413" timestamp="1598405415021" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/src/modules/items/items.service.ts</url>
+          <line>87</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

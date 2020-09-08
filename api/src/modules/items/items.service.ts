@@ -47,7 +47,8 @@ export class ItemsService {
         const acquiredItemsGroupedByDay = await this.itemModel.aggregate([
             {
               $match: {
-                  acquired: true
+                  acquired: true,
+                  createdAt: this.dayjsProvider.dayjs().subtract(30, 'd').date()
               }
             },
             {
