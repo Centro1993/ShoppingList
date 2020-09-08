@@ -1,12 +1,15 @@
 <template>
-    <b-card-group class="m-4" columns>
+    <b-card-group class="m-5 justify-content-center" columns>
         <b-card
             v-for="(day, dayIndex) in itemsGroupedByDay"
             :key="dayIndex" :header="day._id === todaysDateAsFormattedString ? 'Einkaufsliste' : day._id"
             @click="toggleDayTableVisibility(dayIndex)"
-            :no-body="!dayTablesVisibility[dayIndex]"
+            no-body
         >
-            <b-list-group v-if="dayTablesVisibility[dayIndex]">
+            <b-list-group
+                v-if="dayTablesVisibility[dayIndex]"
+                flush
+            >
                 <b-list-group-item
                         button
                         v-for="(item, itemIndex) in day.items"
@@ -16,7 +19,7 @@
                         :disabled="todaysDateAsFormattedString !== day._id"
                         v-hammer:swipe.left="($event) => removeItem(item._id)"
                 >
-                    <p>
+                    <p class="card-text m-2">
                         {{ item.amount }} {{ item.itemPreset.unit }} {{ item.itemPreset.name }}
                     </p>
                 </b-list-group-item>
