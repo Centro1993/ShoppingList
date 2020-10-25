@@ -54,8 +54,11 @@
                         <label for="unit">Einheit</label>
                     </b-col>
                     <b-col sm="9">
-                        <b-form-select v-model="itemPresetUnitUserInput" id="unit" :options="units"
-                                       :disabled="newItem.itemPreset !== ''"></b-form-select>
+                        <b-form-select
+                                v-model="newItem.unit"
+                                id="unit"
+                                :options="units"
+                        ></b-form-select>
                     </b-col>
                 </b-row>
             </b-form-group>
@@ -107,7 +110,6 @@
 
             function setItemPreset(itemPreset: GetItemPresetDto) {
               nameTypeahead.value.inputValue = itemPreset.name
-              itemPresetUnitUserInput.value = itemPreset.unit
               itemPresetNameUserInput.value = itemPreset.name
               newItem.value.itemPreset = itemPreset._id
             }

@@ -15,6 +15,9 @@ export class Item extends Document {
     acquired: boolean;
 
     @Prop()
+    unit: string;
+
+    @Prop()
     acquiredAt: Date;
 
     createdAt: Date;

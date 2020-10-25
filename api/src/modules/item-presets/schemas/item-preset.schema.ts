@@ -8,9 +8,6 @@ export class ItemPreset extends Document {
     @Prop({ required: true, unique: true })
     name: string;
 
-    @Prop()
-    unit: string;
-
     createdAt: Date;
     updatedAt: Date;
 }
