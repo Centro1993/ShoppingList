@@ -49,7 +49,7 @@
                     </b-col>
                 </b-row>
                 <br>
-                <b-row class="my-1">
+                <b-row v-if="validAmount" class="my-1">
                     <b-col sm="3">
                         <label for="unit">Einheit</label>
                     </b-col>
@@ -67,8 +67,14 @@
                 <b-button class="mb-6" block @click="clearItemPreset(); $bvModal.hide('create-item-modal')">
                     Close
                 </b-button>
-                <b-button class="mb-6" variant="success" block
-                          @click="createItem(); $bvModal.hide('create-item-modal')">
+                <b-button
+                    class="mb-6"
+                    variant="success"
+                    block
+                    @click="createItem();
+                    $bvModal.hide('create-item-modal')"
+                    :disabled="!itemPresetNameUserInput || itemPresetNameUserInput === ''"
+                >
                     Create
                 </b-button>
             </b-form-group>
@@ -77,7 +83,7 @@
 </template>
 
 <script lang="ts">
-    import {defineComponent, ref, watch, computed} from "@vue/composition-api";
+import {defineComponent, ref, watch, computed, watchEffect} from "@vue/composition-api";
     import {CreateItemDto} from "../../../../api-dist/dist/modules/items/dto/create-item.dto";
     import units from "../../../../api-dist/dist/lib/enums/units"
     import {GetItemPresetDto} from "../../../../api-dist/dist/modules/item-presets/dto/get-item-preset.dto";
@@ -91,10 +97,17 @@
             const { $bvToast } = context.root;
             const nameTypeahead = ref({inputValue: ''})
 
-            const newItem = ref<CreateItemDto>(new CreateItemDto('', 1));
+            const newItem = ref<CreateItemDto>(new CreateItemDto('', null));
             const itemPresetNameUserInput = ref<string>('')
             const itemPresetUnitUserInput = ref<string>('')
             const itemPresets = computed<GetItemPresetDto[]>(() => ItemPresetStore.itemPresets)
+
+            const validAmount = computed<boolean>(() => {
+              const validAmount = !!(newItem.value.amount && newItem.value.amount > 0)
+              if (!validAmount) newItem.value.unit = undefined
+              return validAmount
+            });
+
 
             function clearItemPreset() {
                 if(nameTypeahead.value) nameTypeahead.value.inputValue = ''
@@ -116,9 +129,9 @@
 
             async function createItem() {
                 try {
-                    // create item preset if needed
+                    // create a new item preset if needed
                     if (newItem.value.itemPreset === '') {
-                        const newItemPreset: GetItemPresetDto | null = await ItemPresetStore.createItemPreset(new CreateItemPresetDto(itemPresetNameUserInput.value, itemPresetUnitUserInput.value))
+                        const newItemPreset: GetItemPresetDto | null = await ItemPresetStore.createItemPreset(new CreateItemPresetDto(itemPresetNameUserInput.value))
                         if (!newItemPreset) {
                             $bvToast.toast('Item could not be created', {
                                 variant: 'danger',
@@ -157,6 +170,13 @@
                 }
             )
 
+            // ensure amount is positive, else set to null
+            watchEffect(
+                () => {
+                  newItem.value.amount = newItem.value.amount && newItem.value.amount > 0 ? newItem.value.amount : null
+                }
+            )
+
             return {
                 newItem,
                 itemPresets,
@@ -165,6 +185,7 @@
                 clearItemPreset,
                 itemPresetNameUserInput,
                 itemPresetUnitUserInput,
+                validAmount,
                 units,
                 nameTypeahead
             };

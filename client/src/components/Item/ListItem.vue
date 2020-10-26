@@ -20,7 +20,7 @@
                         v-hammer:swipe.left="($event) => removeItem(item._id)"
                 >
                     <p class="card-text m-2">
-                        {{ item.amount }} {{ item.itemPreset.unit }} {{ item.itemPreset.name }}
+                        {{ item.amount || '' }}{{ item.unit ? ` ${item.unit} ` : ' ' }}{{ item.itemPreset.name }}
                     </p>
                 </b-list-group-item>
             </b-list-group>
